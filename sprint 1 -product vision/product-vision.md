@@ -100,7 +100,7 @@ Pawsome Prices is a site that searches through pet supply stores and sites, and 
 ---
 
 ## Risks
-- the site isn't popular, nobody cares about these deasl
+- the site isn't popular, nobody cares about these deals
 - while we're developing, a competitor brings a similar product to market
 - a bigger/well-known company moves into this area (Google Shopping, etc.)
 - the development team doesn't have the experience to integrate all the various areas into one product
