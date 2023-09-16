@@ -1,7 +1,7 @@
 # CSCI 401 - Software Engineering - Product Vision
 
 ## Summary
-[Short description of the product or assignment topic.]
+Pawsome Prices is a site that will search pet supply sites and return the best deal to users. It saves users, who are searching for prodcuts for their pets, time and money.
 
 **Team: Theta**
 
