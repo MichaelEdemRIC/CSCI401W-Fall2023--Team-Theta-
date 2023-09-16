@@ -74,21 +74,17 @@ Pawsome Prices is a site that searches through pet supply stores and sites, and 
 | **Segment**              | **Description**                                       |
 |--------------------------|-------------------------------------------------------|
 | **Problem**              | - Pet supplies are expensive                          |
-|                          | - There isn't a site in the pet supply market         |
-|                          |   for finding the best deals                          |
-| **Solution**             | - Develop a site that will search for products and    |
-|                          |   return the best price                               |
+|                          | - There isn't a site in the pet supply market for finding the best deals       |
+| **Solution**             | - Develop a site that will search for products and return the best price   |
 | **Unique Value Prop.**   | - There aren't sites for this particular niche        |
 | **Unfair Advantage**     | - This will be the first type of site for pet products|
 | **Customer Segments**    | - Pet owners                                          |
 | **Key Metrics**          | - Number of users who buy through our site            |
 |                          | - Number of users who visit our site                  |
 |                          | - Number of site searches                             |
-|                          | - Number of purchases through a specific site         |
-|                          |   (most popular linked site or affiliate)             |
+|                          | - Number of purchases through a specific site (most popular linked site or affiliate)     |
 | **Channels**             | - Google search / SEO                                 |
-|                          | - Social media (posting deals and then linking to     |
-|                          |   site)                                               |
+|                          | - Social media (posting deals and then linking to site)    |
 |                          | - Advertising                                         |
 | **Cost Structure**       | - Hosting                                             |
 |                          | - Development time                                    |
