@@ -1,4 +1,4 @@
-## 🚀 **Sprint Review #2**
+## 🚀 **Sprint Review #1**
 
 ### 📅 **Sprint Date**: [September 1, 2023] - [September 14, 2023]
 
