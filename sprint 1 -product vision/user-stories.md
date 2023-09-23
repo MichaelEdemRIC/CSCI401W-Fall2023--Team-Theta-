@@ -17,13 +17,13 @@ Table of Contents
 
 ## Vision Statement
 
-FOR financial compliance professionals WHO need to look into the source/destination of funds transferred using the blockchain. **Blockr.io** is a web-based SaaS application THAT permits compliance teams to derive insights from the blockchain and mitigate financial crime risk. UNLIKE other forensic analysis tools, OUR PRODUCT provides state of the art technology that empowers compliance teams to make better risk management decisions.
+FOR pet owners WHO want to save time and money on pet products, Pawsome Prices is a site/app THAT will compare prices for products that users can search for, saving them time and money to get the best deal. UNLIKE similar sites that search for all products, OUR PRODUCT focuses on the specific niche, pet products, and will make it more convenient for users who are searching for products in this area, saving them time and money.
 
 ## Product Personas
 
-- **Persona 1**: Blockr.io clients (user) are the organizations which subscribe to our SaaS product or have our technology installed on their premises.
-- **Persona 2**: Investigators (user) are the primary users of the application. The investigations team will interact with the network graphs, search the blockchain, make escalation decisions.
-- **Persona 3**: Leadership/management (user) teams are concerned with the overall performance of investigators and the enterprise’s risk exposure.
+- **Persona 1**: Exotic pet owner who has trouble finding their pet food or medicine at common stores and needs to pay a lot of money for them online.
+- **Persona 2**: Pet owner who has a list of things they regularly have to buy, but they are all at different websites.
+- **Persona 3**: Website manager who needs to create pages for every item
 - **Persona 4**: Tenant administrators configure the tenant instance. This includes adding/inviting users, configuring the alerting rules meant to notify the client of a potential risky transaction, updating watchlists, etc.
 
 ## Product Scenarios
