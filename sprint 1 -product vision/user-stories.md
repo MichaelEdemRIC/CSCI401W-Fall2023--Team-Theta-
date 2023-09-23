@@ -101,7 +101,7 @@ Describe the user interface for your product.
 
 - [Insert simple wireframes of your product—what will it look like from a user interface perspective]
 
-  Dashboard: ![mockup of the homepage](sprint 1 -product vision/images/Homepage.png)
+  Dashboard: <img src="sprint 1 -product vision/images/Homepage.png" />
 
   Manage users: <insert picture here>
 
