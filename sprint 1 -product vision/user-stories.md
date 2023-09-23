@@ -103,16 +103,4 @@ Describe the user interface for your product.
 
   Dashboard: ![alt text](images/Homepage.png)
 
-  Manage users: <insert picture here>
-
-  Dashboard: <insert picture here>
-
-  Exceptions assigned to the user: <insert picture here>
-
-  Notifications: <insert picture here>
-
-  Administrator panel: <insert picture here>
-
-  Investigative UI – warnings detected: <insert picture here>
-
-  Sharing networks with colleagues: <insert picture here>
+  Search Results: ![alt text](images/Search.png)
