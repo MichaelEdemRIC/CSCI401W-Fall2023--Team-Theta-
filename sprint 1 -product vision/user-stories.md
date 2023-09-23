@@ -38,13 +38,14 @@ FOR pet owners WHO want to save time and money on pet products, Pawsome Prices i
 
 ## User Stories
 
-### Feature1: Multi-tenant Authentication
+### Feature1: Home page
 
 **Description**
 
-- As a Blockr.io client, I need a way to manage my Blockr.io subscriptions which include adding and removing users.
-- As an investigator using Blockr.io, I need a way to log into the application. Authentication will grant me the necessary permission to complete my tasks.
-- As a member of the organization's (client) leadership team, I need to log into the Blockr.io application and access dashboards.
+- As a user, I would like to use a search bar.
+- As a manager, I want to create a list of popular products and display them on the home page
+- As a manager, I want to create a list of products with heavy disounts and display them on the home page
+- As a user, I want to be able to shop by animal, brand, or product type.
 
 **Constraints**
 
@@ -55,31 +56,29 @@ Authentication from the SaaS application requires verification through the clien
 - All users will authenticate through a single page and will be routed to the appropriate instance based on access policies setup by instance administrators.
 - Users may only set up an account through invitation from instance administrators.
 
-### Feature2: Dashboard
+### Feature2: Account
 
 **Description**
 
-- As a Blockr.io user, I want to visualize my organization’s performance and usage of the Blockr.io application.
-- As a Blockr.io user, I need to know the breakdown of exception backlogs, displayed by status group (open/in-progress/closed).
-- As a Blockr.io user, I need to know if exceptions were assigned to me for further review.
-- As a Blockr.io user, I need to know when progress was made on an exception I am "watching".
-- As a member of the Leadership/management team, I want to know how many active users are working.
-- As a member of the Leadership/management team, I want to know how many exceptions were escalated for further review by the investigations team.
+- As a user, I want to sign up with my username, email, and password
+- As a user, I want to add products to the wishlist tied to my account
+- As a user, I want to be notified when products on my wishlist go on sale.
+- As a user, I want to be able to change my email address.
+- As a user, I want to be able to change my password.
+- As a site manager, I want to be able to lock problematic user accounts.
 
 **Constraints**
 
 Dashboard must only share tenant-specific statistics.
 
-### Feature3: Network Graph User Interface
+### Feature3: Product Pages
 
 **Description**
 
-- As an investigator, I need a way to search a given bitcoin address on the blockchain.
-- As an investigator, I need a way to view connections to a bitcoin address as a graph.
-- As an investigator, I need a way to click on a bitcoin address node on the graph and read information about the address such as the number of transactions, holdings, and reports of abuse.
-- As an investigator, I need a way to flag bitcoin address nodes for ongoing monitoring.
-- As an investigator, I need a way to assign a network graph to a colleague, including escalating to senior management.
-- As an investigator, I need a way to enter comments about a network to share with colleagues, including senior management.
+- As a user, I would like to see information and images of products on each page, such as what animals each product is for and what category of product I am looking at.
+- As a user, I would like to be able to click links to sites that sell products on the page.
+- As a user, I would like to see the price history of a product.
+- As a user, I would like to add a product to my wishlist.
 
 **Constraints**
 
@@ -89,9 +88,8 @@ Sharing/assigning networks to colleagues is limited to those within the tenant i
 
 **Description**
 
-- As an administrator, I need to have a way to invite users to the organization’s instance.
-- As an administrator, I need a way to manage a watchlist of addresses.
-- As an administrator, I need a way to adjust the parameters for our transactions monitoring system.
+- As an administrator, I would like to see statistics about which pages users are visiting
+- As an administrator, I want to be able to add and delete product pages.
 
 **Constraints**
 
