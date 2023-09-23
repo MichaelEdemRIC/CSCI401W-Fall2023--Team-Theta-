@@ -101,10 +101,10 @@ Describe the user interface for your product.
 
 - [Insert simple wireframes of your product—what will it look like from a user interface perspective]
 
-  Dashboard: !(images/Homepage.png)
+  Dashboard: ![](images/Homepage.png)
 
-  Search Results: !(images/Search.png)
+  Search Results: ![](images/Search.png)
   
-  Example Product Page: !(images/product.png)
+  Example Product Page: ![](images/product.png)
 
-  Wishlist page: !(images/wishlist.png)
+  Wishlist page: ![](images/wishlist.png)
