@@ -1,85 +1,120 @@
-# Product Vision Assignment
+# Product Personas and Stories
 
-## Summary 
+## Team: Keepers of the Crypt
 
-**Blockr.io** is a software-as-a-service, hosted on the cloud. It serves as a forensic analysis tool employed by financial compliance professionals to examine the origin or destination of transactions executed using blockchain. As an emergent technology, the blockchain might pose money laundering concerns to financial service providers due to the absence of stringent regulation and oversight. 
+Table of Contents
 
-### Team: Keepers of the Crypt 
+- [Product Definition](#product-definition)
+- [Vision Statement](#vision-statement)
+- [Product Personas](#product-personas)
+- [Product Scenarios](#product-scenarios)
+- [User Stories](#user-stories)
+- [User Experience](#user-experience)
 
-## Table of Contents 
+## Product Definition
 
-1. [Summary](#summary)
-2. [Team](#team-keepers-of-the-crypt)
-3. [Executive Summary](#executive-summary)
-4. [Product Vision](#product-vision)
-5. [Vision Statement](#vision-statement)
-6. [Product Vision Board](#product-vision-board)
-7. [Lean Canvas](#lean-canvas)
-8. [Risks](#risks)
+**Blockr.io** is a blockchain forensic analysis tool used by financial compliance professionals to investigate the source or destination of funds transferred using the blockchain. The blockchain technology introduces a novel way for individuals and entities to transfer funds using the decentralized network of ledgers. The blockchain user base continues to grow which makes knowing the source of funds imperative for client onboarding. Financial institutions have an obligation to know their customers and understand the source of funds on an ongoing basis. Blockr.io serves as a tool to empower risk managers in analyzing their client's behavior.
 
-## Team 
+## Vision Statement
 
-| Name               | Role                   | Notes |
-|--------------------|------------------------|-------|
-| Robert De La Cruz  | Developer/Product Owner|       |
-| Maxine Wo          | Developer/Product Owner|       |
-| Dylan Gagnon       | Developer/Product Owner|       |
-| Jonathan D. Oliveira| Developer/Product Owner|       |
+FOR financial compliance professionals WHO need to look into the source/destination of funds transferred using the blockchain. **Blockr.io** is a web-based SaaS application THAT permits compliance teams to derive insights from the blockchain and mitigate financial crime risk. UNLIKE other forensic analysis tools, OUR PRODUCT provides state of the art technology that empowers compliance teams to make better risk management decisions.
 
-## Executive Summary 
+## Product Personas
 
-Blockr.io operates as a blockchain forensic analysis instrument. Designed for financial compliance professionals, it aids in investigating the source or final point of funds transferred via blockchain. The ongoing growth of the blockchain user base amplifies the need for transparency regarding fund origins, especially during client onboarding phases. Financial institutions are mandated to understand their customers and maintain awareness of fund sources consistently. Blockr.io is the catalyst empowering risk managers in their quest to decipher client actions.
+- **Persona 1**: Blockr.io clients (user) are the organizations which subscribe to our SaaS product or have our technology installed on their premises.
+- **Persona 2**: Investigators (user) are the primary users of the application. The investigations team will interact with the network graphs, search the blockchain, make escalation decisions.
+- **Persona 3**: Leadership/management (user) teams are concerned with the overall performance of investigators and the enterprise’s risk exposure.
+- **Persona 4**: Tenant administrators configure the tenant instance. This includes adding/inviting users, configuring the alerting rules meant to notify the client of a potential risky transaction, updating watchlists, etc.
 
-## Product Vision 
+## Product Scenarios
 
-The inception of our project was marked by deliberations on potential areas of interest and recognizing our strengths within the domain of computer science. The decision was made in favor of devising a blockchain forensic analysis tool. This tool would assist financial establishments in probing into their client’s financial transactions, particularly the source and transfer of funds. Given the burgeoning popularity of the crypto market and the attendant potential for financial crime, the significance of transaction risk identification cannot be overstated. Our envisioned product is designed to facilitate fund transfers using a decentralized network of ledgers.
+### Product Scenario 1
 
-## Vision Statement 
+**ACME Bank** has recently onboarded a new business line which will introduce new customers from the European Union. The new portfolio of customers includes clients known to receive and send funds transfers from or to cryptocurrency exchanges, including decentralized exchanges. The new customers expose the bank to potential risk associated with the origin of the funds. **Rick James**, head of Financial Crime Compliance, gathers the compliance team to assess the risk associated with the new customers. Promptly, the compliance data management team collects the wallet addresses associated with these onboard clients, to load them into Blockr.io. Within minutes, Rick James is notified of risky transactions and the alerts are routed to the investigations team.
 
-For financial compliance professionals who require insights into the origin/destination of blockchain-based fund transfers, Blockr.io, a cloud-based SaaS application, offers the expertise. Unlike other forensic analysis tools, Blockr.io integrates cutting-edge technology, ensuring compliance teams are equipped to make informed risk management decisions.
+**Kathy Griffin**, Head of Sanctions screening, was tasked with assessing the risk associated with ACME Bank’s newly onboarded clients. Kathy assembles her investigations team to review the exceptions identified by Blockr.io. Kathy understands how important this assignment is, so she utilizes Blockr.io's real-time dashboard to monitor the progress her team is making as they review exceptions, and credible concerns are identified.
 
-## Product Vision Board 
+**David Copperfield** is the lead investigator for ACME Bank’s screening team. David uses Blockr.io to uncover risk associated with the transactions found on the blockchain, through the unique graphs presented in Blockr.io's user interface. David and his team can explore relationships between wallets by double-clicking nodes and expanding the network of links. If risky connections are identified, then David and his team can flag and save network data for further review. David may choose to escalate a risky transaction to senior leadership through the Blockr.io customizable workflows.
 
-We're cultivating Blockr.io, comprehending the prospective challenges blockchain can bring in the sphere of financial services, particularly around money laundering. With Blockr.io, compliance teams are empowered to meticulously track and scrutinize potentially risky fund transfers.
+## User Stories
 
-**Target Audience**:
-- Law enforcement
-- Financial service providers
-- Law firms
-- Regulatory agencies
+### Feature1: Multi-tenant Authentication
 
-**Features**:
-- Network graphs detailing payment pathways
-- Alerts upon subject detection in a watchlist
-- Comprehensive wallet information
-- Choice of a public cloud service or client-server installation
+**Description**
 
-For the minimum viable product, the development focus would be on:
-- Client UI
-- Server backend
-- Database
-- Network design
-- Ancillary features
+- As a Blockr.io client, I need a way to manage my Blockr.io subscriptions which include adding and removing users.
+- As an investigator using Blockr.io, I need a way to log into the application. Authentication will grant me the necessary permission to complete my tasks.
+- As a member of the organization's (client) leadership team, I need to log into the Blockr.io application and access dashboards.
 
-## Lean Canvas
+**Constraints**
 
-| **Segment**              | **Description**                                                                                      |
-|--------------------------|------------------------------------------------------------------------------------------------------|
-| **Problem**              | - Time to market                                                                                     |
-|                          | - Use of open-source API may be unreliable                                                           |
-|                          | - Dependency on an externally maintained watchlist                                                   |
-| **Solution**             | - Leverage open-source libraries for a quicker market entry                                         |
-|                          | - Foster partnerships with API providers                                                             |
-|                          | - Consider the creation of a proprietary watchlist                                                   |
-| **Unique Value Prop.**   | A unique tool to combat financial crime and safeguard financial systems.                             |
-| **Unfair Advantage**     | Proprietary risk detection algorithm flagging suspicious transactions.                               |
-| **Customer Segments**    | Law enforcement, financial service providers, law firms, regulatory agencies.                        |
-| **Key Metrics**          | Client acquisition rates, blockchain search queries, risky blockchain connections, watchlist matches.|
-| **Channels**             | ACAMS, financial crime seminars, regulatory agency referrals.                                        |
-| **Cost Structure**       | Varied cost outlines from legal fees to developer salaries.                                          |
-| **Revenue Streams**      | Client contracts, consultancy, API licensing.                                                        |
+Authentication from the SaaS application requires verification through the client’s authentication protocol or through our authentication mechanism.
 
-## Risks 
+**Comments**
 
-While the MVP is narrowly scoped, a comprehensive competitive product necessitates an extended timeline and significant capital for effective project management.
+- All users will authenticate through a single page and will be routed to the appropriate instance based on access policies setup by instance administrators.
+- Users may only set up an account through invitation from instance administrators.
 
+### Feature2: Dashboard
+
+**Description**
+
+- As a Blockr.io user, I want to visualize my organization’s performance and usage of the Blockr.io application.
+- As a Blockr.io user, I need to know the breakdown of exception backlogs, displayed by status group (open/in-progress/closed).
+- As a Blockr.io user, I need to know if exceptions were assigned to me for further review.
+- As a Blockr.io user, I need to know when progress was made on an exception I am "watching".
+- As a member of the Leadership/management team, I want to know how many active users are working.
+- As a member of the Leadership/management team, I want to know how many exceptions were escalated for further review by the investigations team.
+
+**Constraints**
+
+Dashboard must only share tenant-specific statistics.
+
+### Feature3: Network Graph User Interface
+
+**Description**
+
+- As an investigator, I need a way to search a given bitcoin address on the blockchain.
+- As an investigator, I need a way to view connections to a bitcoin address as a graph.
+- As an investigator, I need a way to click on a bitcoin address node on the graph and read information about the address such as the number of transactions, holdings, and reports of abuse.
+- As an investigator, I need a way to flag bitcoin address nodes for ongoing monitoring.
+- As an investigator, I need a way to assign a network graph to a colleague, including escalating to senior management.
+- As an investigator, I need a way to enter comments about a network to share with colleagues, including senior management.
+
+**Constraints**
+
+Sharing/assigning networks to colleagues is limited to those within the tenant instance.
+
+### Feature4: Administrator Panel
+
+**Description**
+
+- As an administrator, I need to have a way to invite users to the organization’s instance.
+- As an administrator, I need a way to manage a watchlist of addresses.
+- As an administrator, I need a way to adjust the parameters for our transactions monitoring system.
+
+**Constraints**
+
+Limited to the tenant's instance.
+
+## User Experience
+
+Describe the user interface for your product.
+
+- [Insert simple wireframes of your product—what will it look like from a user interface perspective]
+
+  Login page: <insert picture here>
+
+  Manage users: <insert picture here>
+
+  Dashboard: <insert picture here>
+
+  Exceptions assigned to the user: <insert picture here>
+
+  Notifications: <insert picture here>
+
+  Administrator panel: <insert picture here>
+
+  Investigative UI – warnings detected: <insert picture here>
+
+  Sharing networks with colleagues: <insert picture here>
