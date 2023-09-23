@@ -1,6 +1,6 @@
 # Product Personas and Stories
 
-## Team: Keepers of the Crypt
+## Team Theta
 
 Table of Contents
 
@@ -13,7 +13,7 @@ Table of Contents
 
 ## Product Definition
 
-**Blockr.io** is a blockchain forensic analysis tool used by financial compliance professionals to investigate the source or destination of funds transferred using the blockchain. The blockchain technology introduces a novel way for individuals and entities to transfer funds using the decentralized network of ledgers. The blockchain user base continues to grow which makes knowing the source of funds imperative for client onboarding. Financial institutions have an obligation to know their customers and understand the source of funds on an ongoing basis. Blockr.io serves as a tool to empower risk managers in analyzing their client's behavior.
+**Pawsome Prices**; will offer links to pet products across multiple different online storefronts so that the user can choose the one with the best price.
 
 ## Vision Statement
 
@@ -23,18 +23,18 @@ FOR pet owners WHO want to save time and money on pet products, Pawsome Prices i
 
 - **Persona 1**: Exotic pet owner who has trouble finding their pet food or medicine at common stores and needs to pay a lot of money for them online.
 - **Persona 2**: Pet owner who has a list of things they regularly have to buy, but they are all at different websites.
-- **Persona 3**: Website manager who needs to create pages for every item
-- **Persona 4**: Tenant administrators configure the tenant instance. This includes adding/inviting users, configuring the alerting rules meant to notify the client of a potential risky transaction, updating watchlists, etc.
+- **Persona 3**: Website manager who needs to create pages for every item.
+- **Persona 4**: Single working parent who does not have time to run around to a lot of different stores and would rather buy online.
 
 ## Product Scenarios
 
 ### Product Scenario 1
+**Website Administrator** wants to display highly visited items on the front page of the website in order to increase traffic to those popular items, making more profit from affiliate links.
 
-**ACME Bank** has recently onboarded a new business line which will introduce new customers from the European Union. The new portfolio of customers includes clients known to receive and send funds transfers from or to cryptocurrency exchanges, including decentralized exchanges. The new customers expose the bank to potential risk associated with the origin of the funds. **Rick James**, head of Financial Crime Compliance, gathers the compliance team to assess the risk associated with the new customers. Promptly, the compliance data management team collects the wallet addresses associated with these onboard clients, to load them into Blockr.io. Within minutes, Rick James is notified of risky transactions and the alerts are routed to the investigations team.
+**Louie**, who owns a bearded dragon, does not know where to get the cheapest crickets to feed it, and spends a lot of time searching on sites like Amazon and Walmart to compare the prices. He visits Pawsome Prices and searches for crickets, then chooses the cheapest one, leading to a link to Amazon. 
 
-**Kathy Griffin**, Head of Sanctions screening, was tasked with assessing the risk associated with ACME Bank’s newly onboarded clients. Kathy assembles her investigations team to review the exceptions identified by Blockr.io. Kathy understands how important this assignment is, so she utilizes Blockr.io's real-time dashboard to monitor the progress her team is making as they review exceptions, and credible concerns are identified.
+**Roger Sampson** has bought 3 cat towers for his Siamese cat Henrietta in the past year. Henrietta always manages to destroy the tower after a short time. Roger is tired of spending money on things that are going to break but he knows that Henrietta needs this tower to feel comfortable at home. Roger wants to buy another cat tower for as little money as possible, knowing that he'll need to replace it soon. He adds the tower that his cat likes to his wishlist and buys it from the cheapest website listed on Pawsome Prices.
 
-**David Copperfield** is the lead investigator for ACME Bank’s screening team. David uses Blockr.io to uncover risk associated with the transactions found on the blockchain, through the unique graphs presented in Blockr.io's user interface. David and his team can explore relationships between wallets by double-clicking nodes and expanding the network of links. If risky connections are identified, then David and his team can flag and save network data for further review. David may choose to escalate a risky transaction to senior leadership through the Blockr.io customizable workflows.
 
 ## User Stories
 
