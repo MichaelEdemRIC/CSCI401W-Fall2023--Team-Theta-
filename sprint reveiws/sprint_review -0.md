@@ -1,6 +1,6 @@
 ## 🚀 **Sprint Review**
 
-### 📅 **Sprint Date**: [September 1, 2023] - [September 14, 2023]
+### 📅 **Sprint Date**: [September 1, 2023] - [September 11, 2023]
 
 ### 🛠 **Assignment**: [Sprint Review 0]
 
