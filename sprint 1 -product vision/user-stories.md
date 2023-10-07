@@ -39,13 +39,12 @@ FOR pet owners WHO want to save time and money on pet products, Pawsome Prices i
 ## User Stories
 
 ### Feature1: Home page
-
 **Description**
 
-- As a user, I would like to use a search bar.
-- As a manager, I want to create a list of popular products and display them on the home page
-- As a manager, I want to create a list of products with heavy disounts and display them on the home page
-- As a user, I want to be able to shop by animal, brand, or product type.
+- As a user, I would like to use a search bar so that I can find specific pet products.
+- As a user, I would like to see a search results page with previews of relevant products so that I can narrow down my search.
+- As a site administrator, I want to display popular items to a section on the home page so I can increase site traffic to popular affiliate links.
+- As a site administrator, I want to display heavily discounted items to a section on the home page so I can attract user traffic to good deals.
 
 **Constraints**
 
