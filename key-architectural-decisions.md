@@ -40,9 +40,9 @@ This assignment is designed to guide you in understanding the foundational aspec
 
 ### 3.1. Frontend Framework
 
-Choice: React
-Why: React is well-documented and widely used, making those skills valuable in the workforce. React is popular because it encapsulates html into functions that are easier to read and reuse.
-Considerations: We will use Vite to build our React frontend because it streamlines the process. React is a faster frontend than some of its competitors but requires a lot external libraries. This creates flexibility but less structure. \
+Choice: React \
+Why: React is well-documented and widely used, making those skills valuable in the workforce. React is popular because it encapsulates html into functions that are easier to read and reuse.\
+Considerations: We will use Vite to build our React frontend because it streamlines the process. React is a faster frontend than some of its competitors but requires a lot external libraries. This creates flexibility but less structure. 
 
 ### 3.2. Backend Framework
 
