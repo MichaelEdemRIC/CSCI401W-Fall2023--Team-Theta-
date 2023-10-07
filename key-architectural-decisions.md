@@ -26,13 +26,13 @@ This assignment is designed to guide you in understanding the foundational aspec
 
 ### 1.1. Purpose
 
-Outline what technologies we will learn and implement to create the Pawsome Prices website.
+-Outline what technologies we will learn and implement to create the Pawsome Prices website.
 
 ---
 
 ## 2. System Overview
 
-Provide a simple diagram or description of the high-level system.
+-Provide a simple diagram or description of the high-level system.
 
 ---
 
@@ -40,21 +40,21 @@ Provide a simple diagram or description of the high-level system.
 
 ### 3.1. Frontend Framework
 
-Choice: React
-Why: React is well-documented and widely used, making those skills valuable in the workforce. React is popular because it encapsulates html into functions that are easier to read and reuse.
-Considerations: We will use Vite to build our React frontend because it streamlines the process. React is a faster frontend than some of its competitors but requires a lot external libraries. This creates flexibility but less structure.
+-Choice: React
+-Why: React is well-documented and widely used, making those skills valuable in the workforce. React is popular because it encapsulates html into functions that are easier to read and reuse.
+-Considerations: We will use Vite to build our React frontend because it streamlines the process. React is a faster frontend than some of its competitors but requires a lot external libraries. This creates flexibility but less structure.
 
 ### 3.2. Backend Framework
 
-Choice: Django
-Why: The team is most familiar with Python so the learning curve will be easier. It is also a popular skill to include on a resume and well-docmented.
-Considerations: 
+Choice: Django \
+Why: The team is most familiar with Python so the learning curve will be easier. It is also a popular skill to include on a resume and well-docmented. \
+Considerations: \
 
 ### 3.3. Database System
 
-Choice: mySQL
-Why: mySQL is a common industry standard that is free to use.
-Considerations:
+-Choice: mySQL \
+-Why: mySQL is a common industry standard that is free to use. \
+-Considerations: \
 
 ---
 
@@ -62,7 +62,8 @@ Considerations:
 
 ### 4.1. Team Skills and Learning
 
-- We all knew that we would need to learn most of the new technologies due to a lack of experience with real product development, but we had certain skills like Python beforehand, which influenced our decisions to use a backend like Django. We also looked up what is popular in the industry and what would be valuable to include on a resume. It did not make sense to use less prominant technologies that would not apply to most jobs.
+- We all knew that we would need to learn most of the new technologies due to a lack of experience with real product development, but we had certain skills like Python beforehand, which influenced our decisions to use a backend like Django.
+- We also looked up what is popular in the industry and what would be valuable to include on a resume. It did not make sense to use less prominant technologies that would not apply to most jobs.
 
 ### 4.2. Community and Support
 
