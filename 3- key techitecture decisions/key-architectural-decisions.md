@@ -32,7 +32,10 @@ This assignment is designed to guide you in understanding the foundational aspec
 
 ## 2. System Overview
 
--Provide a simple diagram or description of the high-level system.
+  System Context: ![](images/systemcontext.png)
+  Container: ![](images/container.png)
+  Component: ![](images/component.png)
+
 
 ---
 
