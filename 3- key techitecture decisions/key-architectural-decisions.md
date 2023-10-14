@@ -102,5 +102,6 @@ Here, you'll log key decisions made and the rationale behind them. Here's an exa
 | 2023-10-07 | Chose React as our frontend framework.   | Our frontend team found React easy to use and was able to get a simple website instance up quickly because of how flexible and well-documented it is. |
 | 2023-10-07 | Chose Django as our backend framework.   | Our backend team was most familar with Python, which made learning Django a logical choice for a backend framework. |
 | 2023-10-07 | Chose mySQL as our database.   | While doing research, mySQL was the most popular option with a free community edition that is well-supported, which is why our database team wanted to learn it the most. |
+| 2023-10-14 | Incorporated Bootstrap into our frontend.   | Bootstrap makes it easier to create and style components, with many sample components for basic features like buttons, lists, cards, and navigation bars. |
 
 Note: As you progress, keep adding to this log. It will not only help you track your decisions but also offer insights into your evolving
