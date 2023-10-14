@@ -32,11 +32,17 @@ This assignment is designed to guide you in understanding the foundational aspec
 
 ## 2. System Overview
 
-  System Context: ![](images/systemcontext.png)
+  System Context: 
   
-  Container: ![](images/container.png)
+  ![](images/systemcontext.png)
   
-  Component: ![](images/component.png)
+  Container: 
+  
+  ![](images/container.png)
+  
+  Component: 
+  
+  ![](images/component.png)
 
 
 ---
