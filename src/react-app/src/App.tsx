@@ -1,30 +1,38 @@
-
-import ListGroup from "./components/ListGroup";
+import ProductTable from "./components/ProductTable";
 import axios from 'axios';
 import { useState } from "react";
+
+export type Entry = {
+  complete: boolean;
+  id: number;
+  title: string;
+  userId: number;
+};
+
 function App() {
-  let items = ['New York','San Francisco','Tokyo','London','Paris']; // FETCH ITEMS FROM BACKEND HERE
-  const [item, setItem] = useState('')
+  const [items, setItem] = useState<Entry[] | null>(null)
   
+  //const endpoint = 'http://104.131.179.187/api/students/';
+  const endpoint = 'https://jsonplaceholder.typicode.com/todos';
   const getItem = () => {
-    axios.get('http://104.131.179.187/api/students/')
+    axios.get(endpoint)
     .then(response => {
-      console.log(response.data[0].name)
-      setItem(response.data[0].name)
-      
+      console.log(response.data);
+      setItem(response.data);
     }).catch(err => {
       console.log(err)
     })
   }
-  
 
   return (
-    <div className= "align-middle">
-    <div className="text-center">
-    <button className="btn btn-primary" type="button" onClick={(getItem)}>Get Product</button>
-      {item && <h1>{item}</h1>}
+    <div>
+      <div className="container center-both d-grid gap-2" >
+        <button className="btn btn-primary btn-lg" type="button" onClick={(getItem)}>Get Products</button>
+        <ProductTable className="table" items={items} />
+      </div>
+      
     </div>
-    </div>
+
   );
 }
 
