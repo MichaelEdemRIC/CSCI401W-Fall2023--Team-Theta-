@@ -19,6 +19,8 @@
 ---
 
 ### What could we have done better?
-1.more communication between frontend and backend teams
+1. more communication between frontend and backend teams
+   
 2. need more practice with coding in VS
-3.members can speak up more often to drive further meetings 
+   
+3 .members can speak up more often to drive further meetings 
