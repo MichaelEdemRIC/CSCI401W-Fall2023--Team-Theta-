@@ -2,20 +2,21 @@ import ProductTable from "./components/ProductTable";
 import axios from 'axios';
 import { useState } from "react";
 
+// Data type of a row
 export type Entry = {
-  complete: boolean;
-  id: number;
-  title: string;
-  userId: number;
+  pk: number;
+  price: string;
+  dateAdded: string;
+  name: string;
 };
 
 function App() {
   const [items, setItem] = useState<Entry[] | null>(null)
   
-  //const endpoint = 'http://104.131.179.187/api/students/';
-  const endpoint = 'https://jsonplaceholder.typicode.com/todos';
+  const myEndpoint = 'http://104.131.179.187/api/get_data/';
+  const testEndpoint = 'https://jsonplaceholder.typicode.com/todos';
   const getItem = () => {
-    axios.get(endpoint)
+    axios.get(myEndpoint)
     .then(response => {
       console.log(response.data);
       setItem(response.data);
