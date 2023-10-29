@@ -2,8 +2,8 @@
 
 ### Create and use a Python environment
 ```
-python -m venv pawsome_prices
-source ./pawsome_prices/bin/activate
+python -m venv pawsome_prices_env
+source ./pawsome_prices_env/bin/activate
 ```
 Note - it only needs to be created once. Use the "source" line when you want to activate it again
 
