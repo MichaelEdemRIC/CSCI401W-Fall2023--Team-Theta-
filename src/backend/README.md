@@ -9,7 +9,7 @@ Note - it only needs to be created once. Use the "source" line when you want to 
 
 ### Install libraries
 The `requirements.txt` file should list all Python libraries that we are using and they will be installed using:
-
+- navigate to the django_react_proj folder
 ```
 pip install -r requirements.txt
 ```
