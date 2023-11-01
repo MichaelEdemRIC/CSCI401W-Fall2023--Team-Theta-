@@ -23,4 +23,4 @@
    
 2. need more practice with coding in VS
    
-3 .members can speak up more often to drive further meetings 
+3. members can speak up more often to drive further meetings 
