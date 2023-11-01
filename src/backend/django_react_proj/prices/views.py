@@ -22,9 +22,8 @@ def get_data(request):
         # return JsonResponse(serializer.data, safe=False)
 
 
-@api_view(['GET'])
+@api_view(['GET', 'PUT'])
 def get_data_id(request, pk):
-    print("at get data name function start") # delete
     try:
         product = Product.objects.get(pk=pk)
         print(product.price)
@@ -34,3 +33,11 @@ def get_data_id(request, pk):
     if request.method == "GET":
         serializer = ProductSerializer(product)
         return JsonResponse(serializer.data)
+    
+    elif request.method == "PUT":
+        product_data = JSONParser().parse(request)
+        serializer = ProductSerializer(product, data=product_data)
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(serializer.data)
+        return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
