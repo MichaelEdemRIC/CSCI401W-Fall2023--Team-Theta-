@@ -8,5 +8,6 @@ urlpatterns = [
     re_path(r'^api/students/$', student_views.students_list),
     re_path(r'^api/students/([0-9])$', student_views.students_detail),
     path('api/get_data/', price_views.get_data),
+    path('api/get_data_id/<int:pk>/', price_views.get_data_id)
     #re_path(r'^api/get_data/$', views.get_data),
 ]
