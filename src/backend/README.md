@@ -36,16 +36,16 @@ base URL: http://localhost:8000/api
 
 /get_data - GET
 ```
-curl http://localhost:8000/get_data/
+curl http://localhost:8000/api/get_data/
 ```
 /get_data_id - GET, PUT
 ```
 curl http://localhost:8000/get_data_id/1/
-curl -X PUT http://localhost:8000/get_data_id/1/ -d '{"name": "Horse Saddle", "price": "129.00"}' -H "Content-Type: application/json"
+curl -X PUT http://localhost:8000/api/get_data_id/1/ -d '{"name": "Horse Saddle", "price": "129.00"}' -H "Content-Type: application/json"
 
 ```
 /add_item - POST
 ```
-curl -X POST http://localhost:8000/add_item/ -d '{"name": "Pony Spray", "price": "325.50"}' -H "Content-Type: application/json"
+curl -X POST http://localhost:8000/api/add_item/ -d '{"name": "Pony Spray", "price": "325.50"}' -H "Content-Type: application/json"
 
 ```
