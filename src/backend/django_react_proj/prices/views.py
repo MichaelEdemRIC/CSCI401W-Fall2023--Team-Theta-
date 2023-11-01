@@ -22,17 +22,6 @@ def get_data(request):
         # return JsonResponse(serializer.data, safe=False)
 
 
-@api_view(['POST'])
-def add_item(request):
-     if request.method == "POST":
-        product_data = JSONParser().parse(request)
-        serializer = ProductSerializer(data=product_data)
-        if serializer.is_valid():
-            serializer.save()
-            return JsonResponse(serializer.data)
-        return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
 @api_view(['GET', 'PUT'])
 def get_data_id(request, pk):
     try:
@@ -48,6 +37,17 @@ def get_data_id(request, pk):
     elif request.method == "PUT":
         product_data = JSONParser().parse(request)
         serializer = ProductSerializer(product, data=product_data)
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(serializer.data)
+        return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['POST'])
+def add_item(request):
+     if request.method == "POST":
+        product_data = JSONParser().parse(request)
+        serializer = ProductSerializer(data=product_data)
         if serializer.is_valid():
             serializer.save()
             return JsonResponse(serializer.data)
