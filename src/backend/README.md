@@ -40,7 +40,7 @@ curl http://localhost:8000/api/get_data/
 ```
 /get_data_id - GET, PUT
 ```
-curl http://localhost:8000/get_data_id/1/
+curl http://localhost:8000/api/get_data_id/1/
 curl -X PUT http://localhost:8000/api/get_data_id/1/ -d '{"name": "Horse Saddle", "price": "129.00"}' -H "Content-Type: application/json"
 
 ```
