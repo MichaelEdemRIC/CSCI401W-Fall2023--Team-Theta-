@@ -46,6 +46,6 @@ curl -X PUT http://localhost:8000/get_data_id/1/ -d '{"name": "Horse Saddle", "p
 ```
 /add_item - POST
 ```
-curl -X PUT http://localhost:8000/add_item/ -d '{"name": "Pony Spray", "price": "325.50"}' -H "Content-Type: application/json"
+curl -X POST http://localhost:8000/add_item/ -d '{"name": "Pony Spray", "price": "325.50"}' -H "Content-Type: application/json"
 
 ```
