@@ -25,7 +25,6 @@ def get_data(request):
 @api_view(['POST'])
 def add_item(request):
      if request.method == "POST":
-        print("add_item")
         product_data = JSONParser().parse(request)
         serializer = ProductSerializer(data=product_data)
         if serializer.is_valid():
