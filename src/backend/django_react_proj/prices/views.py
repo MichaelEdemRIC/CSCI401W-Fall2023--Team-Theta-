@@ -26,7 +26,6 @@ def get_data(request):
 def get_data_id(request, pk):
     try:
         product = Product.objects.get(pk=pk)
-        print(product.price)
     except Product.DoesNotExist:
         return JsonResponse({'message': 'The product does not exist'}, status=status.HTTP_404_NOT_FOUND)
 
@@ -52,3 +51,11 @@ def add_item(request):
             serializer.save()
             return JsonResponse(serializer.data)
         return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['PUT'])
+def search_name(request):
+    if request.method == "PUT":
+        query = request.data['name']
+        product = Product.objects.filter(name__icontains=query)
+        serializer = ProductSerializer(product[0])
+        return JsonResponse(serializer.data)

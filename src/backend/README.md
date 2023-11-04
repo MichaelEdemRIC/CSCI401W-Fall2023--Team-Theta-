@@ -47,5 +47,8 @@ curl -X PUT http://localhost:8000/api/get_data_id/1/ -d '{"name": "Horse Saddle"
 /add_item - POST
 ```
 curl -X POST http://localhost:8000/api/add_item/ -d '{"name": "Pony Spray", "price": "325.50"}' -H "Content-Type: application/json"
-
+```
+/search_name - PUT
+```
+curl -X PUT http://localhost:8000/api/search_name/ -d '{"name": "Horse Saddle"}' -H "Content-Type: application/json"
 ```
