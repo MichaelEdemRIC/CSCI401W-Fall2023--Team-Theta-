@@ -22,7 +22,4 @@
 
 ### 🗒️ **Notes**:
 
-
-#### Product Ideas
-
 ---
