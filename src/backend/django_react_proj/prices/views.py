@@ -52,10 +52,17 @@ def add_item(request):
             return JsonResponse(serializer.data)
         return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-@api_view(['PUT'])
-def search_name(request):
-    if request.method == "PUT":
-        query = request.data['name']
-        product = Product.objects.filter(name__icontains=query)
+@api_view(['GET'])
+def search_name(request, name):
+    if request.method == "GET":
+        # query = request.data['name']
+        product = Product.objects.filter(name__icontains=name)
         serializer = ProductSerializer(product[0])
         return JsonResponse(serializer.data)
+# @api_view(['PUT'])
+# def search_name(request):
+#     if request.method == "PUT":
+#         query = request.data['name']
+#         product = Product.objects.filter(name__icontains=query)
+#         serializer = ProductSerializer(product[0])
+#         return JsonResponse(serializer.data)
