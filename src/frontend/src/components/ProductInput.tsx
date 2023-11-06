@@ -39,7 +39,7 @@ function ProductInput() {
   
     const handleSubmit = () => {
       axios
-        .post('http://127.0.0.1:8000/api/get_data', { pk, name, price, dateAdded })
+        .post('http://127.0.0.1:8000/api/add_item/', { pk, name, price, dateAdded })
         .then((response) => {
           setMessage(response.data.message);
           setName('');
