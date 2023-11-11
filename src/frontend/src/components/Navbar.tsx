@@ -1,15 +1,17 @@
 import {Button, Container, Nav, Navbar as NavbarBs} from "react-bootstrap"
 import { NavLink } from "react-router-dom"
+import { SearchBar } from "./SearchBar";
 
 export function Navbar() {
     return (
-        <NavbarBs sticky="top" className="bg-white shadow-sm mb-3">
+        <NavbarBs sticky="top" className="navbar-brand navbar-light bg-light justify-content-between">
             <Container>
                 <Nav className="me-auto">
                     <Nav.Link to="/" as={NavLink}>
-                        <h1>Pawsome Prices</h1>
+                        <h1 className="navbar-brand ">Pawsome Prices</h1>
                     </Nav.Link>
                 </Nav>
+                <SearchBar/>
                 <Button style={{ width: "3rem", height: "3rem", position: "relative", border:'5px solid blue' }} 
                 variant="outline-primary"
                 className="rounded-circle"

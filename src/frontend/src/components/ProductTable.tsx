@@ -1,7 +1,7 @@
-import { Entry } from '../App';
+import { Product } from "./Product";
 
 interface Props {
-  items: Entry[] | null;
+  items: Product[] | null;
   className?: string;
 }
 function ProductTable({ items }: Props ) {

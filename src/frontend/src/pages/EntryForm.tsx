@@ -1,14 +1,14 @@
 import React, { useState, useEffect, ChangeEvent } from 'react';
-import { Entry } from '../App';
+import { Product } from "../components/Product";
 import axios from 'axios';
 
 interface Props {
-  newEntry: Entry[] | null;
+  newEntry: Product[] | null;
   className?: string;
   message: string;
 }
 
-function ProductInput() {
+export function EntryForm() {
     const [pk, setID] = useState<number>();
     const [name, setName] = useState<string>('');
     const [price, setPrice] = useState<string>('');
@@ -95,5 +95,3 @@ function ProductInput() {
     </div>
   );
 }
-
-export default ProductInput

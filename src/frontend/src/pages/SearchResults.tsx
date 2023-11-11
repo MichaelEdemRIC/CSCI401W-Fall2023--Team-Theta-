@@ -1,18 +1,18 @@
-import storeItems from "../data/products.json"
-import {Col,Row} from "react-bootstrap"
-import { StoreItem } from "../components/StoreItem"
+import storeItems from "../data/searchresults.json";
+import { Col, Row } from "react-bootstrap";
+import { ItemCard } from "../components/ItemCard";
 
 export function SearchResults() {
-    return (
-        <>
-            <h1>Results</h1>
-            <Row md= {2} xs={1} lg={3} className="g-3">
-                {storeItems.map(item => (
-                    <Col>
-                        <StoreItem {...item}
-                    </Col>
-                ))}
-            </Row>
-        </>
-    )
+  return (
+    <>
+      <h1>Results</h1>
+      <Row md={3} xs={2} lg={4} className="g-3">
+        {storeItems.map((item) => (
+          <Col key={item.id}>
+            <ItemCard item={item}/>
+          </Col>
+        ))}
+      </Row>
+    </>
+  );
 }
