@@ -11,7 +11,7 @@
 - group is ready to build out user features of our site
 - Consistent class participation 
 - good git hub repository manegement
--
+
 ---
 ### What didn’t go well?
 - attendance for meetings
