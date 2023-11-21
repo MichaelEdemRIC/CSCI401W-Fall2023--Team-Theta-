@@ -57,8 +57,11 @@ def search_name(request, name):
     if request.method == "GET":
         # query = request.data['name']
         product = Product.objects.filter(name__icontains=name)
-        serializer = ProductSerializer(product[0])
-        return JsonResponse(serializer.data)
+        print(len(product))
+        # serializer = ProductSerializer(product[0])
+        serializer = ProductSerializer(product, many=True)
+        # return JsonResponse(serializer.data)
+        return JsonResponse(serializer.data, safe=False)
 # @api_view(['PUT'])
 # def search_name(request):
 #     if request.method == "PUT":
