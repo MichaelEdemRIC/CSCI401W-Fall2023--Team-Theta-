@@ -5,6 +5,10 @@
     "lib": ["es5", "es6", "dom", "dom.iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    /* js config */
+    "allowJs": true,
+     
+    
 
     /* Bundler mode */
     "moduleResolution": "bundler",

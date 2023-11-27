@@ -12,6 +12,14 @@ export function Navbar() {
                     </Nav.Link>
                 </Nav>
                 <SearchBar/>
+                <Nav className="me-auto">
+                    <Nav.Link to="/login" as={NavLink}>
+                        <Button>
+                        
+                            Log in
+                        </Button>
+                    </Nav.Link>
+                </Nav>
                 <Button style={{ width: "3rem", height: "3rem", position: "relative", border:'5px solid blue' }} 
                 variant="outline-primary"
                 className="rounded-circle"
