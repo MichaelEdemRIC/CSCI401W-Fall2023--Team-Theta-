@@ -9,6 +9,9 @@ urlpatterns = [
     path('api/get_data_id/<int:pk>/', price_views.get_data_id),
     path('api/add_item/', price_views.add_item),
     path('api/search_name/', price_views.search_name),
-    path('api/search_name/<str:name>/', price_views.search_name)
+    path('api/search_name/<str:name>/', price_views.search_name),
     #re_path(r'^api/get_data/$', views.get_data),
+    re_path('login', price_views.login),
+    re_path('login', price_views.signup),
+    re_path('login', price_views.test_token)
 ]

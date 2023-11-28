@@ -18,10 +18,10 @@ class Product(models.Model):
         return self.name
     
 class User(models.Model):
-    userName = models.CharField("Username", max_length=240)
+    username = models.CharField("Username", max_length=240)
     password = models.CharField("Password", max_length=240)
     email = models.CharField("Email", max_length=240)
     joinDate = models.DateField("Join Date", auto_now_add=True)
 
     def __str__(self):
-        return self.userName
+        return self.username
