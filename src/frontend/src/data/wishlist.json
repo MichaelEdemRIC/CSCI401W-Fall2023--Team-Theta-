@@ -1,0 +1,67 @@
+[
+    {
+        "pk": 1,
+        "name": "Dog Bowl",
+        "amzMSRP": "9.99",
+        "amzCurrentPrice": "8.99",
+        "walMSRP": "10.99",
+        "walCurrentPrice": "9.99",
+        "lowestPrice": "8.99",
+        "img": "imgs/test.jpeg",
+        "amzURL": "9.99",
+        "walURL": "https://www.walmart.com/ip/Pedigree-Complete-Nutrition-Roasted-Chicken-Rice-Vegetable-Dry-Dog-Food-For-Adult-Dog-18-Lb-Bag/365811940?athbdg=L1102&from=/search",
+        "dateAdded": "2023-10-28"
+    },
+    {
+        "pk": 4,
+        "name": "Dog Bone",
+        "amzMSRP": "9.99",
+        "amzCurrentPrice": "8.99",
+        "walMSRP": "10.99",
+        "walCurrentPrice": "9.99",
+        "lowestPrice": "8.99",
+        "img": "imgs/test.jpeg",
+        "amzURL": "9.99",
+        "walURL": "https://www.walmart.com/ip/Pedigree-Complete-Nutrition-Roasted-Chicken-Rice-Vegetable-Dry-Dog-Food-For-Adult-Dog-18-Lb-Bag/365811940?athbdg=L1102&from=/search",
+        "dateAdded": "2023-11-01"
+    },
+    {
+        "pk": 3,
+        "name": "Dog Bone",
+        "amzMSRP": "9.99",
+        "amzCurrentPrice": "8.99",
+        "walMSRP": "10.99",
+        "walCurrentPrice": "9.99",
+        "lowestPrice": "8.99",
+        "img": "imgs/test.jpeg",
+        "amzURL": "9.99",
+        "walURL": "https://www.walmart.com/ip/Pedigree-Complete-Nutrition-Roasted-Chicken-Rice-Vegetable-Dry-Dog-Food-For-Adult-Dog-18-Lb-Bag/365811940?athbdg=L1102&from=/search",
+        "dateAdded": "2023-11-01"
+    },
+    {
+        "pk": 2,
+        "name": "Dog Bone",
+        "amzMSRP": "9.99",
+        "amzCurrentPrice": "8.99",
+        "walMSRP": "10.99",
+        "walCurrentPrice": "9.99",
+        "lowestPrice": "8.99",
+        "img": "imgs/test.jpeg",
+        "amzURL": "9.99",
+        "walURL": "https://www.walmart.com/ip/Pedigree-Complete-Nutrition-Roasted-Chicken-Rice-Vegetable-Dry-Dog-Food-For-Adult-Dog-18-Lb-Bag/365811940?athbdg=L1102&from=/search",
+        "dateAdded": "2023-11-01"
+    },
+    {
+        "pk": 5,
+        "name": "Dog Bone",
+        "amzMSRP": "9.99",
+        "amzCurrentPrice": "8.99",
+        "walMSRP": "10.99",
+        "walCurrentPrice": "9.99",
+        "lowestPrice": "8.99",
+        "img": "imgs/test.jpeg",
+        "amzURL": "9.99",
+        "walURL": "https://www.walmart.com/ip/Pedigree-Complete-Nutrition-Roasted-Chicken-Rice-Vegetable-Dry-Dog-Food-For-Adult-Dog-18-Lb-Bag/365811940?athbdg=L1102&from=/search",
+        "dateAdded": "2023-11-01"
+    }
+]

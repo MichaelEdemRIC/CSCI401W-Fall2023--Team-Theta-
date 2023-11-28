@@ -10,10 +10,11 @@ import { EntryForm } from "./pages/EntryForm";
 
 //Components
 import { Navbar } from "./components/Navbar";
-
+import { WishlistProvider } from "./context/WishlistContext";
 function App() {
   return (
-    <>
+    <WishlistProvider>
+    
       <Navbar />
 
       <Container className="mb-4">
@@ -24,7 +25,7 @@ function App() {
           <Route path="/products/:id" element={<ProductPage />} />
         </Routes>
       </Container>
-    </>
+    </WishlistProvider>
   );
 }
 
