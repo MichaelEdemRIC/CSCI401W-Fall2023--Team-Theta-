@@ -58,3 +58,15 @@ def search_name(request, name):
         product = Product.objects.filter(name__icontains=name)
         serializer = ProductSerializer(product, many=True)
         return JsonResponse(serializer.data, safe=False)
+
+@api_view(['POST'])
+def upload_image(request):
+    if request.method == "POST":
+        data = request.data
+        obj_id = data[obj_id]
+        obj = Product.objects.get(pk=obj_id)
+
+        obj.image = request.FILES.get('image')
+        obj.save()
+
+        return Response('Image was successfully uploaded')
