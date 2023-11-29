@@ -52,3 +52,4 @@ curl -X POST http://localhost:8000/api/add_item/ -d '{"name": "Pony Spray", "pri
 ```
 curl -X PUT http://localhost:8000/api/search_name/ -d '{"name": "Horse Saddle"}' -H "Content-Type: application/json"
 ```
+/upload_image - POST
