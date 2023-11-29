@@ -70,3 +70,20 @@ def upload_image(request):
         obj.save()
 
         return Response('Image was successfully uploaded')
+
+@api_view(['GET'])
+def get_wishlist(request):
+    if request.method == 'GET':
+        wishlist_items = Wishlist.objects.all()
+        serializer = WishlistSerializer(wishlist_items, many=True)
+        return JsonResponse(serializer.data, safe=False)
+
+@api_view(['POST'])
+def add_wishlist_item(request):
+     if request.method == "POST":
+        wishlist_data = JSONParser().parse(request)
+        serializer = WishlistSerializer(data=wishlist_data)
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(serializer.data)
+        return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
