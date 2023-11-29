@@ -52,3 +52,11 @@ curl -X POST http://localhost:8000/api/add_item/ -d '{"name": "Pony Spray", "pri
 ```
 curl -X PUT http://localhost:8000/api/search_name/ -d '{"name": "Horse Saddle"}' -H "Content-Type: application/json"
 ```
+/get_wishlist
+```
+curl http://localhost:8000/api/get_wishlist/
+```
+/add_wishlist_item
+```
+curl -X POST http://localhost:8000/api/add_wishlist_item/ -d '{"user": "test", "product": 1}' -H "Content-Type: application/json"
+```

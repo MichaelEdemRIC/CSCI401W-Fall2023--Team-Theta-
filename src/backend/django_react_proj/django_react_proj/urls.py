@@ -11,7 +11,8 @@ urlpatterns = [
     path('api/search_name/', price_views.search_name),
     path('api/search_name/<str:name>/', price_views.search_name),
     path('api/upload_image/', price_views.upload_image),
-    path('api/get_wishlist/', price_views.get_wishlist)
+    path('api/get_wishlist/', price_views.get_wishlist),
+    path('api/add_wishlist_item/', price_views.add_wishlist_item)
 
     #re_path(r'^api/get_data/$', views.get_data),
 ]
