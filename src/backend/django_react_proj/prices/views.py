@@ -70,3 +70,10 @@ def upload_image(request):
         obj.save()
 
         return Response('Image was successfully uploaded')
+
+@api_view(['GET'])
+def get_wishlist(request):
+    if request.method == 'GET':
+        wishlist_items = Wishlist.objects.all()
+        serializer = WishlistSerializer(wishlist_items, many=True)
+        return JsonResponse(serializer.data, safe=False)

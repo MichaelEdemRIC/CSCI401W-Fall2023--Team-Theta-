@@ -17,3 +17,13 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+class Wishlist(models.Model):
+    user = models.CharField(max_length=60)
+    # user = models.ForeignKey(User, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    dateAdded = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        # return f"{self.user.username}'s Wishlist: {self.product.name}"
+        return f"{self.user}'s Wishlist: {self.product.name}"
