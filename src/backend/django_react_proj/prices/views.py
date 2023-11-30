@@ -9,7 +9,7 @@ from rest_framework import status
 from rest_framework.authtoken.models import Token
 from django.shortcuts import get_object_or_404
 
-from .models import Product, User 
+from .models import Product, User
 from .serializers import *
 
 @api_view(['GET'])
