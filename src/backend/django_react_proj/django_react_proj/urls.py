@@ -2,6 +2,8 @@ from django.contrib import admin
 from django.urls import path, re_path
 # from students import views as student_views
 from prices import views as price_views
+from django.conf import settings
+from django.conf.urls.static import static 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -20,3 +22,6 @@ urlpatterns = [
     path('api/delete_wishlist_id/<int:pk>/', price_views.delete_wishlist_id)
 
 ]
+urlpatterns = [
+    path('admin/', admin.site.urls),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
