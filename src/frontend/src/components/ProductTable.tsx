@@ -6,7 +6,7 @@ interface Props {
 }
 function ProductTable({ items }: Props ) {
   return (
-<div>
+      <div>
         <table className="table">
         <thead>
             <tr>
