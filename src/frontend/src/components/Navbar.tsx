@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom"
 import { SearchBar } from "./SearchBar";
 import { useWishlist } from "../context/WishlistContext";
 
+
 export function Navbar() {
     const { openList } = useWishlist()
     return (
@@ -21,12 +22,11 @@ export function Navbar() {
                         </Button>
                     </Nav.Link>
                 </Nav>
-                <Button style={{ width: "3rem", height: "3rem", position: "relative", border:'5px solid blue' }} 
-                <Button 
-                onClick={openList}
-                style={{ width: "3rem", height: "3rem", position: "relative", border:'5px solid blue' }} 
-                variant="outline-primary"
-                className="rounded-circle"
+                <Button
+                    onClick={openList}
+                    style={{ width: "3rem", height: "3rem", position: "relative", border:'5px solid blue' }} 
+                    variant="outline-primary"
+                    className="rounded-circle"
                 >
                     <svg style= {{width: '1.5rem', height:'1.5rem', position:'relative', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',}}
                         xmlns="http://www.w3.org/2000/svg" 
