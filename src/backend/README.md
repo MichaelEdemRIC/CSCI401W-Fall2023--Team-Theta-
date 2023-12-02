@@ -32,15 +32,16 @@ python manage.py runserver
 - access the Get All Data endpoint via http://localhost:8000/api/get_data
 ### Authentication Endpoints
 base URL: http://localhost:8000
-/signup - POST
+
+**/signup** - POST
 ```
 curl -X POST http://localhost:8000/signup/ -d '{"username": "test_user", "password": "Pass1234!", "email": "testuser@test.com"}' -H "Content-Type: application/json"
 ```
-/login - POST
+**/login** - POST
 ```
 curl -X POST http://localhost:8000/login/ -d '{"username": "test_user", "password": "Pass1234!"}' -H "Content-Type: application/json"
 ```
-/test_token - GET
+**/test_token** - GET
 *token*
 ```
 curl http://localhost:8000/test_token/ -H "Content-Type: application/json" -H "Authorization: token $token"
@@ -49,31 +50,31 @@ curl http://localhost:8000/test_token/ -H "Content-Type: application/json" -H "A
 ### Endpoints
 base URL: http://localhost:8000/api
 
-/get_data - GET
+**/get_data** - GET
 ```
 curl http://localhost:8000/api/get_data/
 ```
-/get_data_id - GET, PUT
+**/get_data_id** - GET, PUT
 ```
 curl http://localhost:8000/api/get_data_id/1/
 curl -X PUT http://localhost:8000/api/get_data_id/1/ -d '{"name": "Horse Saddle", "price": "129.00"}' -H "Content-Type: application/json"
 
 ```
-/add_item - POST
+**/add_item** - POST
 ```
 curl -X POST http://localhost:8000/api/add_item/ -d '{"name": "Pony Spray", "price": "325.50"}' -H "Content-Type: application/json"
 ```
-/search_name - PUT
+**/search_name** - PUT
 ```
 curl -X PUT http://localhost:8000/api/search_name/ -d '{"name": "Horse Saddle"}' -H "Content-Type: application/json"
 ```
-/upload_image - POST
+**/upload_image** - POST
 
-/get_wishlist - GET
+**/get_wishlist** - GET
 ```
 curl http://localhost:8000/api/get_wishlist/
 ```
-/add_wishlist_item - POST
+**/add_wishlist_item** - POST
 ```
 curl -X POST http://localhost:8000/api/add_wishlist_item/ -d '{"user": "test", "product": 1}' -H "Content-Type: application/json"
 ```
