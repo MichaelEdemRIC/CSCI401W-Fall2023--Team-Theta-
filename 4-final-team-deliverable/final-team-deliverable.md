@@ -16,7 +16,7 @@
 
 ## Product Vision
 
-- **Product Vision Statement:** Replace this with your refined product vision statement.
+- Wanted to make a site that did price comparisons for products of certain categories. We decided on pet products because it seemed like an untapped area, with little competition from larger/well known sites, and could give value to pet owners. These kinds of websites, which are in certain niches, save users time and money by not having to search through many sites for the products. Since there aren't sites specific to the pet market, unlike electronics or PC parts, this niche is an area that we can work in to solve the problem for pet owners.
 
 ## Learning and Growth Journey
 
@@ -63,8 +63,8 @@ Illustrate a coding concept with a relatable analogy:
 
 ### Access Your Work
 
-- **[Presentation Slides](link-to-presentation):** Share a link to your final presentation slides.
-- **[Source Code Repository](link-to-repo):** Provide access to your source code repository.
+- **[Presentation Slides](https://emailric-my.sharepoint.com/:p:/g/personal/sparks_1017_email_ric_edu/EWaFf7m7JkhAqU5TE-ignRoBti5PhbAUoWCvx30B6LIL7w?e=YfS9do)]**
+- **[Source Code Repository](https://github.com/MichaelEdemRIC/CSCI401W-Fall2023--Team-Theta-):**
 - **Other Materials:** Include links to diagrams or documents you created for your project.
 
 ## Final Reflection Presentation
