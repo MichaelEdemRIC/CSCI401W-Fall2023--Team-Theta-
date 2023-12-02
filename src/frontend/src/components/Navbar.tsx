@@ -1,8 +1,10 @@
 import {Button, Container, Nav, Navbar as NavbarBs} from "react-bootstrap"
 import { NavLink } from "react-router-dom"
 import { SearchBar } from "./SearchBar";
+import { useWishlist } from "../context/WishlistContext";
 
 export function Navbar() {
+    const { openList } = useWishlist()
     return (
         <NavbarBs sticky="top" className="navbar-brand navbar-light bg-light justify-content-between">
             <Container>
@@ -15,12 +17,14 @@ export function Navbar() {
                 <Nav className="me-auto">
                     <Nav.Link to="/login" as={NavLink}>
                         <Button>
-                        
                             Log in
                         </Button>
                     </Nav.Link>
                 </Nav>
                 <Button style={{ width: "3rem", height: "3rem", position: "relative", border:'5px solid blue' }} 
+                <Button 
+                onClick={openList}
+                style={{ width: "3rem", height: "3rem", position: "relative", border:'5px solid blue' }} 
                 variant="outline-primary"
                 className="rounded-circle"
                 >

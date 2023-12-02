@@ -55,14 +55,35 @@ def add_item(request):
 @api_view(['GET'])
 def search_name(request, name):
     if request.method == "GET":
-        # query = request.data['name']
         product = Product.objects.filter(name__icontains=name)
-        serializer = ProductSerializer(product[0])
-        return JsonResponse(serializer.data)
-# @api_view(['PUT'])
-# def search_name(request):
-#     if request.method == "PUT":
-#         query = request.data['name']
-#         product = Product.objects.filter(name__icontains=query)
-#         serializer = ProductSerializer(product[0])
-#         return JsonResponse(serializer.data)
+        serializer = ProductSerializer(product, many=True)
+        return JsonResponse(serializer.data, safe=False)
+
+@api_view(['POST'])
+def upload_image(request):
+    if request.method == "POST":
+        data = request.data
+        obj_id = data[obj_id]
+        obj = Product.objects.get(pk=obj_id)
+
+        obj.image = request.FILES.get('image')
+        obj.save()
+
+        return Response('Image was successfully uploaded')
+
+@api_view(['GET'])
+def get_wishlist(request):
+    if request.method == 'GET':
+        wishlist_items = Wishlist.objects.all()
+        serializer = WishlistSerializer(wishlist_items, many=True)
+        return JsonResponse(serializer.data, safe=False)
+
+@api_view(['POST'])
+def add_wishlist_item(request):
+     if request.method == "POST":
+        wishlist_data = JSONParser().parse(request)
+        serializer = WishlistSerializer(data=wishlist_data)
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(serializer.data)
+        return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

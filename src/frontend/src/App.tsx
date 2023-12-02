@@ -13,10 +13,11 @@ import LoginHomePage from './pages/LoginHomePage.tsx';
 
 //Components
 import { Navbar } from "./components/Navbar";
-
+import { WishlistProvider } from "./context/WishlistContext";
 function App() {
   return (
-    <>
+    <WishlistProvider>
+    
       <Navbar />
 
       <Container className="mb-5">
@@ -32,7 +33,7 @@ function App() {
       
         </Routes>
       </Container>
-    </>
+    </WishlistProvider>
   );
 }
 
