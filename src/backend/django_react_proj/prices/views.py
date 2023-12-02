@@ -76,6 +76,7 @@ def upload_image(request):
 
         return Response('Image was successfully uploaded')
 
+# admin endpoint
 @api_view(['GET'])
 def get_wishlist(request):
     if request.method == 'GET':
@@ -83,6 +84,7 @@ def get_wishlist(request):
         serializer = WishlistSerializer(wishlist_items, many=True)
         return JsonResponse(serializer.data, safe=False)
 
+# user endpoint
 @api_view(['POST'])
 def add_wishlist_item(request):
      if request.method == "POST":
@@ -118,4 +120,13 @@ def login(request):
 @authentication_classes([SessionAuthentication, TokenAuthentication])
 @permission_classes([IsAuthenticated])
 def test_token(request):
-    return Response("passed!")
+    # return Response("passed!")
+    return Response("passed for {}".format(request.user.id))
+
+# admin endpoint
+@api_view(['GET'])
+def get_users(request):
+    if request.method == 'GET':
+        product = User.objects.all()
+        serializer = UserSerializer(product, many=True)
+        return JsonResponse(serializer.data, safe=False)
