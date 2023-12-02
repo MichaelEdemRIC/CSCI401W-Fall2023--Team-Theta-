@@ -84,6 +84,15 @@ def get_wishlist(request):
         serializer = WishlistSerializer(wishlist_items, many=True)
         return JsonResponse(serializer.data, safe=False)
 
+# admin endpoint
+@api_view(['DELETE'])
+def delete_wishlist_id(request, pk):
+
+    if request.method == "DELETE":
+        Product.objects.filter(id=pk).delete()
+
+        return JsonResponse("deleted", safe=False)
+
 # user endpoint
 @api_view(['POST'])
 def add_wishlist_item(request):
