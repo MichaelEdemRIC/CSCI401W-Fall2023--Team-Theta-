@@ -76,6 +76,7 @@ def upload_image(request):
 
         return Response('Image was successfully uploaded')
 
+# admin endpoint
 @api_view(['GET'])
 def get_wishlist(request):
     if request.method == 'GET':
@@ -83,6 +84,16 @@ def get_wishlist(request):
         serializer = WishlistSerializer(wishlist_items, many=True)
         return JsonResponse(serializer.data, safe=False)
 
+# admin endpoint
+@api_view(['DELETE'])
+def delete_wishlist_id(request, pk):
+
+    if request.method == "DELETE":
+        Product.objects.filter(id=pk).delete()
+
+        return JsonResponse("deleted", safe=False)
+
+# user endpoint
 @api_view(['POST'])
 def add_wishlist_item(request):
      if request.method == "POST":
@@ -90,7 +101,7 @@ def add_wishlist_item(request):
         serializer = WishlistSerializer(data=wishlist_data)
         if serializer.is_valid():
             serializer.save()
-            return JsonResponse(serializer.data)
+            return JsonResponse(serializer.data, status=status.HTTP_201_CREATED)
         return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['POST'])
@@ -118,4 +129,13 @@ def login(request):
 @authentication_classes([SessionAuthentication, TokenAuthentication])
 @permission_classes([IsAuthenticated])
 def test_token(request):
-    return Response("passed!")
+    # return Response("passed!")
+    return Response("passed for {}".format(request.user.id))
+
+# admin endpoint
+@api_view(['GET'])
+def get_users(request):
+    if request.method == 'GET':
+        product = User.objects.all()
+        serializer = UserSerializer(product, many=True)
+        return JsonResponse(serializer.data, safe=False)

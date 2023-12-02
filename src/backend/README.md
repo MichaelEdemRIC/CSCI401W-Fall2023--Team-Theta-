@@ -78,3 +78,7 @@ curl http://localhost:8000/api/get_wishlist/
 ```
 curl -X POST http://localhost:8000/api/add_wishlist_item/ -d '{"user": "test", "product": 1}' -H "Content-Type: application/json"
 ```
+**/get_users** - GET
+```
+curl http://localhost:8000/api/get_users/
+```

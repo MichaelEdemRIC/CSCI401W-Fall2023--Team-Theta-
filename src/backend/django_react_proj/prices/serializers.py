@@ -9,15 +9,17 @@ class ProductSerializer(serializers.ModelSerializer):
         model = Product 
         fields = ('id', 'name', 'amzMSRP', 'amzCurrentPrice', 'walMSRP', 'walCurrentPrice', 'lowestPrice', 'img', 'amzURL', 'walURL', 'dateAdded')
 
-class WishlistSerializer(serializers.ModelSerializer):
-    product = ProductSerializer()
-
-    class Meta:
-        model = Wishlist
-        fields = ('id', 'user', 'product', 'dateAdded')
-
 class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
         fields = ('id', 'username', 'password', 'email')
+
+class WishlistSerializer(serializers.ModelSerializer):
+    product = ProductSerializer(read_only=True)
+    product_id = serializers.IntegerField(write_only=True)
+    # user = UserSerializer()
+
+    class Meta:
+        model = Wishlist
+        fields = ('id', 'user', 'product', 'product_id', 'dateAdded')
