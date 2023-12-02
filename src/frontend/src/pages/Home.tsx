@@ -32,7 +32,7 @@ export function Home() {
       <h1>Home</h1>
       <Row md={3} xs={2} lg={4} className="g-3">
         {items.map((item) => (
-          <Col key={item.pk}>
+          <Col key={item.id}>
             <ItemCard item={item} />
           </Col>
         ))}

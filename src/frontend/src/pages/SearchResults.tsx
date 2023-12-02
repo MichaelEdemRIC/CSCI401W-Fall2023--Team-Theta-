@@ -38,7 +38,7 @@ export function SearchResults() {
         <h1>Search Results</h1>
         <Row md={3} xs={2} lg={4} className="g-3">
           {searchData.map((product: Product) => (
-            <Col key={product.pk}>
+            <Col key={product.id}>
               <ItemCard item={product} />
             </Col>
           ))}
@@ -51,7 +51,7 @@ export function SearchResults() {
       <>
         <h1>Search Result</h1>
         <Row md={3} xs={2} lg={4} className="g-3">
-          <Col key={searchData.pk}>
+          <Col key={searchData.id}>
             <ItemCard item={searchData} />
           </Col>
         </Row>

@@ -9,7 +9,7 @@ interface Props {
 }
 
 export function EntryForm() {
-    const [pk, setID] = useState<number>();
+    const [id, setID] = useState<number>();
     const [name, setName] = useState<string>('');
     const [price, setPrice] = useState<string>('');
     const [dateAdded, setDateAdded] = useState<string>('');
@@ -39,7 +39,7 @@ export function EntryForm() {
   
     const handleSubmit = () => {
       axios
-        .post('http://127.0.0.1:8000/api/add_item/', { pk, name, price, dateAdded })
+        .post('http://127.0.0.1:8000/api/add_item/', { id, name, price, dateAdded })
         .then((response) => {
           setMessage(response.data.message);
           setName('');
@@ -59,7 +59,7 @@ export function EntryForm() {
                     className="form-control" 
                     aria-label="Sizing example input" 
                     aria-describedby="inputGroup-sizing-default" 
-                    value={pk}
+                    value={id}
                     onChange={handleIDChange}
                 />
             </div>

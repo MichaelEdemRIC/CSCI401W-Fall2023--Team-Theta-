@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 interface Props {
     item: {
-        pk:number
+        id:number
         name:string,
         img:string,
         lowestPrice:string,
@@ -14,7 +14,7 @@ interface Props {
 export function ItemCard({ item }: Props) {
     return (
         <>
-            <Link to={`/products/${item.pk}`}>
+            <Link to={`/products/${item.id}`}>
                 <Card>
                     <Card.Img
                         variant="top"

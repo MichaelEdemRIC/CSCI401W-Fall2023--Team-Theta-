@@ -19,8 +19,8 @@ function ProductTable({ items }: Props ) {
         <tbody>
           {items
             ? items.map((item:any) => {
-              return <tr key={item.pk}>
-                  <td>{item.pk}</td>
+              return <tr key={item.id}>
+                  <td>{item.id}</td>
                   <td>{item.name}</td>
                   <td>{item.price}</td>
                   <td>{item.dateAdded}</td>
