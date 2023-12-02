@@ -30,6 +30,21 @@ pip install -r requirements.txt
 python manage.py runserver
 ```
 - access the Get All Data endpoint via http://localhost:8000/api/get_data
+### Authentication Endpoints
+base URL: http://localhost:8000
+/signup - POST
+```
+curl -X POST http://localhost:8000/signup/ -d '{"username": "test_user", "password": "Pass1234!", "email": "testuser@test.com"}' -H "Content-Type: application/json"
+```
+/login - POST
+```
+curl -X POST http://localhost:8000/login/ -d '{"username": "test_user", "password": "Pass1234!"}' -H "Content-Type: application/json"
+```
+/test_token - GET
+*token*
+```
+curl http://localhost:8000/test_token/ -H "Content-Type: application/json" -H "Authorization: token $token"
+```
 
 ### Endpoints
 base URL: http://localhost:8000/api
