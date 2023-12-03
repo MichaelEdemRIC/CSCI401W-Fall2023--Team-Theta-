@@ -61,7 +61,7 @@ def add_item(request):
 def search_name(request, name):
     if request.method == "GET":
         product = Product.objects.filter(name__icontains=name)
-        serializer = ProductSerializer(product, many=True)
+        serializer = ProductSerializer(product, context={'request': request}, many=True)
         return JsonResponse(serializer.data, safe=False)
 
 @api_view(['POST'])
