@@ -20,7 +20,7 @@ urlpatterns = [
     re_path('test_token', price_views.test_token),
     path('api/get_users/', price_views.get_users),
     path('api/delete_wishlist_id/<int:pk>/', price_views.delete_wishlist_id)
-
+    
 ]
 urlpatterns = [
     path('admin/', admin.site.urls),
