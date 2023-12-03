@@ -18,7 +18,7 @@ export function ItemCard({ item }: Props) {
                 <Card>
                     <Card.Img
                         variant="top"
-                        src={`/${item.img}`}
+                        src={`${item.img}`}
                         className="card-img-side"
                         style={{ objectFit:"cover"}}
                     />

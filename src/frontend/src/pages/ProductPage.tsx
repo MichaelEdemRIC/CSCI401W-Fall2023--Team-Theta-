@@ -10,6 +10,7 @@ export function ProductPage() {
   let { id } = useParams();
   const [product, setProduct] = useState<Product | null>(null);
   const itemsEndpoint = "http://localhost:8000/api/get_data_id/";
+  const baseURL = "http://localhost:8000/";
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,7 +32,7 @@ export function ProductPage() {
         <h1>{product.name}</h1>
         <Row >
             <Col>
-              <img src={'/imgs/test.jpeg'} style={{ maxWidth: '90%', maxHeight: '90%' }} alt="Product"></img>
+              <img src={baseURL + product.img} style={{ maxWidth: '90%', maxHeight: '90%' }} alt="Product"></img>
             </Col>
             <Col style={{ height: '100%', background: '#D8D8D8', padding: '15px', borderRadius: '8px' }}>
               <Row>
