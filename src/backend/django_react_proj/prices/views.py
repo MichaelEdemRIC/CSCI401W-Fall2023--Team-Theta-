@@ -134,6 +134,8 @@ def test_token(request):
 
 # admin endpoint
 @api_view(['GET'])
+@authentication_classes([SessionAuthentication, TokenAuthentication])
+@permission_classes([IsAuthenticated, IsAdminUser])
 def get_users(request):
     if request.method == 'GET':
         product = User.objects.all()
@@ -144,10 +146,10 @@ def get_users(request):
 @authentication_classes([SessionAuthentication, TokenAuthentication])
 @permission_classes([IsAuthenticated, IsAdminUser])
 def test_admin_token(request):
-    return Response("passed!")
+    return Response("passed for {}".format(request.user.id))
 
 @api_view(['GET'])
 @authentication_classes([SessionAuthentication, TokenAuthentication])
-@permission_classes([IsAuthenticated, IsAdminUser])
+@permission_classes([IsAuthenticated])
 def test_user_token(request):
-    return Response("passed!")
+    return Response("passed for {}".format(request.user.id))
