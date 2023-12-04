@@ -15,8 +15,6 @@ export function SearchBar() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     navigate('/search-results/', { state: query });
-    
-
   };
 
   return (

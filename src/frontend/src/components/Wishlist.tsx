@@ -19,7 +19,7 @@ export function Wishlist({ isOpen }: WishlistProps) {
             <Offcanvas.Body>
                 <Stack gap={3}>
                     {storeItems.map((product: Product) => (
-                        <ItemCard item={product} />
+                        <ItemCard key={product.id} item={product} />
                     ))}
                 </Stack>
             </Offcanvas.Body>
