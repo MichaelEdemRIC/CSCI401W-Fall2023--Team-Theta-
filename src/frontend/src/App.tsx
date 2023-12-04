@@ -8,7 +8,6 @@ import { ProductPage } from "./pages/ProductPage";
 import { EntryForm } from "./pages/EntryForm";
 import LoginPage from './pages/LoginPage.tsx';
 import RegisterPage from './pages/RegisterPage.tsx';
-import ForgetPasswordPage from './pages/ForgetPaswordPage.tsx';
 
 //Components
 import { Navbar } from "./components/Navbar";
@@ -28,7 +27,6 @@ function App() {
           <Route path="/products/:id" element={<ProductPage />} />
           <Route path="/login" element={ <LoginPage /> } />
           <Route path="/register" element={ <RegisterPage /> } />
-          <Route path="/forget-password" element={ <ForgetPasswordPage /> } />
       
         </Routes>
       </Container>

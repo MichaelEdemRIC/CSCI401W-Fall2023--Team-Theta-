@@ -35,7 +35,7 @@ export function SearchResults() {
     return (
       <>
       <Container className="m-5">
-        <h1>Search Results</h1>
+        <h1 className=" text-center">Search Results</h1>
         <hr className="my-4" />
         <Row md={3} xs={2} lg={4} className="g-3">
           {searchData.map((product: Product) => (

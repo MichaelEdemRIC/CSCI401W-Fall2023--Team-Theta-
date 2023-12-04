@@ -14,7 +14,6 @@ export default function LoginPage() {
                 </p>
                 <p>
                     <label>Password</label>
-                    <Link to="/forget-password"><label className="right-label">Forget password?</label></Link>
                     <br/>
                     <input type="password" name="password" required />
                 </p>

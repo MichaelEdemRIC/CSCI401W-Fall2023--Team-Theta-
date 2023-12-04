@@ -30,7 +30,9 @@ export function Home() {
   return (
     <>
     <Container className="m-5">
-      <h1>Home</h1>
+      <h3 className=" text-center">
+          All your pet needs in one place.
+        </h3>
       <hr className="my-4" />
       <Row md={3} xs={2} lg={4} className="g-3">
         {items.map((item:Product) => (
