@@ -2,11 +2,17 @@
 install node.js and npm from https://nodejs.org/en/download
 
 npm install vite
+
 npm install bootstrap
+
 npm install react-bootstrap
+
 npm install react-router-dom
+
 npm install react-query
+
 npm install axios
+
 
 
 # Running the frontend
