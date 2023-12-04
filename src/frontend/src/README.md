@@ -15,25 +15,25 @@ npm run dev
 ```
 # Page URLS
 
-# base url
+**base url**
 http://localhost:5173
 
-#home
+**home**
 http://localhost:5173/
 or
 http://localhost:5173/home
 
-#register
+**register**
 http://localhost:5173/register
 
-#login
+**login**
 http://localhost:5173/login
 
-#product page
+**product page**
 http://localhost:5173/products/product_id
 
-#search results
+**search results**
 http://localhost:5173/search-results
 
-#add product
+**add product**
 http://localhost:5173/search-results/add
