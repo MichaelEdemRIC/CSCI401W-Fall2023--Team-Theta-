@@ -31,11 +31,13 @@ export function ProductPage() {
       <>
         <Container className="m-3">
           <Row className="m-5 auto">
+          
             <Col md={6} className="d-flex justify-content-center">
-              <img src={baseURL + product.img} className="img-fluid" alt="Product" style={{width:"auto", height:"50%",paddingTop:"50px"}}/>
+              
+              <img src={baseURL + product.img} className="img-fluid" alt="Product" style={{width:"auto", height:"50%",paddingTop:"30px"}}/>
             </Col>
             <Col md={6} className="bg-light p-4 rounded">
-              <div className="border border-secondary p-3">
+              <div className="border p-3 rounded">
               <Row className="mb-3"> 
                 <h3>{product.name}</h3>
                 <hr className="my-2" />

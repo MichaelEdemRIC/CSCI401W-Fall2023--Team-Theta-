@@ -109,15 +109,9 @@ input {
     width: 100%;
     padding: .3rem;
     border: none;
-    background: #222;
-    color: #fff;
     border-radius: 3px;
 }
 
-#sub_btn:hover {
-    background: #333;
-    transition: all .5s
-}
 
 footer p {
     margin: 0;

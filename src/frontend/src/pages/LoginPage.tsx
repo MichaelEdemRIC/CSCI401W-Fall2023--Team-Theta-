@@ -19,7 +19,7 @@ export default function LoginPage() {
                     <input type="password" name="password" required />
                 </p>
                 <p>
-                    <button id="sub_btn" type="submit">Login</button>
+                    <button className="btn btn-warning" id="sub_btn" type="submit">Login</button>
                 </p>
             </form>
             <footer>

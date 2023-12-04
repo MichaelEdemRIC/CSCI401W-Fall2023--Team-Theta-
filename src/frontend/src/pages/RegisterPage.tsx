@@ -24,7 +24,7 @@ export default function RegisterPage() {
                 </p>
                 
                 <p>
-                    <button id="sub_btn" type="submit">Register</button>
+                    <button id="sub_btn" className="btn btn-warning" type="submit">Register</button>
                 </p>
             </form>
             <footer>
