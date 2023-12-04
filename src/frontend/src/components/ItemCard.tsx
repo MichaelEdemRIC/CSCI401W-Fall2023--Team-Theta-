@@ -21,7 +21,7 @@ export function ItemCard({ item }: Props) {
           variant="top"
           src={item.img}
           className="card-img-side"
-          style={{ objectFit: "contain", height: "300px" }}
+          style={{ objectFit: "contain", height: "400px", padding:"20px" }}
         />
         <Card.Body className="d-flex flex-column" >
           <Card.Title  className="d-flex justify-content-between align-items-baseline mb-4">
