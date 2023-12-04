@@ -10,7 +10,7 @@ from rest_framework.authtoken.models import Token
 from django.shortcuts import get_object_or_404
 from rest_framework.decorators import authentication_classes, permission_classes
 from rest_framework.authentication import SessionAuthentication, TokenAuthentication
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, IsAdminUser
 
 from .models import Product 
 from .serializers import *
@@ -139,3 +139,15 @@ def get_users(request):
         product = User.objects.all()
         serializer = UserSerializer(product, many=True)
         return JsonResponse(serializer.data, safe=False)
+    
+@api_view(['GET'])
+@authentication_classes([SessionAuthentication, TokenAuthentication])
+@permission_classes([IsAuthenticated, IsAdminUser])
+def test_admin_token(request):
+    return Response("passed!")
+
+@api_view(['GET'])
+@authentication_classes([SessionAuthentication, TokenAuthentication])
+@permission_classes([IsAuthenticated, IsAdminUser])
+def test_user_token(request):
+    return Response("passed!")
