@@ -1,4 +1,4 @@
-import { Col, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { ItemCard } from "../components/ItemCard";
 import { useState, useEffect } from "react";
 import { Product } from "../components/Product";
@@ -29,7 +29,9 @@ export function Home() {
 
   return (
     <>
+    <Container className="m-5">
       <h1>Home</h1>
+      <hr className="my-4" />
       <Row md={3} xs={2} lg={4} className="g-3">
         {items.map((item:Product) => (
           <Col key={item.id}>
@@ -37,6 +39,7 @@ export function Home() {
           </Col>
         ))}
       </Row>
+      </Container>
     </>
   );
 }

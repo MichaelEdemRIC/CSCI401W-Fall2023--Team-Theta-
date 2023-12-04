@@ -11,8 +11,9 @@ export function Wishlist({ isOpen }: WishlistProps) {
     return (
         <Offcanvas show={isOpen} onHide={closeList} placement = "end">
             <Offcanvas.Header closeButton>
-                <Offcanvas.Title>
-                    Wishlist
+                <Offcanvas.Title className="m-3">
+                        <h3 >Wishlist</h3>
+                        <hr className="my-1" />
                 </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>

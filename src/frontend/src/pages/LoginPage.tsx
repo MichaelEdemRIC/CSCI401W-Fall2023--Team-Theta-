@@ -6,7 +6,7 @@ import '../LoginApp.css'
 export default function LoginPage() {
     return (
         <div className="text-center m-5-auto">
-            <h2>Sign in to us</h2>
+            <h2>Sign in</h2>
             <form action="/home" className="login">
                 <p>
                     <label>Username or email address</label><br/>

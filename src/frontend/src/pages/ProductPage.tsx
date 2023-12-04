@@ -2,7 +2,7 @@ import { useParams } from "react-router"
 import { useState, useEffect } from "react";
 import { Product } from "../components/Product";
 import axios from "axios";
-import { Col, Row } from "react-bootstrap";
+import { Col, Row, Container } from "react-bootstrap";
 import { PriceDiscount } from "../components/PriceDiscount";
 import { BuyButton } from "../components/BuyButton";
 // ProductPage.tsx
@@ -29,47 +29,59 @@ export function ProductPage() {
   if(product) {
     return (
       <>
-        <h1>{product.name}</h1>
-        <Row >
-            <Col>
-              <img src={baseURL + product.img} style={{ maxWidth: '90%', maxHeight: '90%' }} alt="Product"></img>
+        <Container className="m-3">
+          <Row className="m-5 auto">
+            <Col md={6} className="d-flex justify-content-center">
+              <img src={baseURL + product.img} className="img-fluid" alt="Product" style={{width:"auto", height:"50%",paddingTop:"50px"}}/>
             </Col>
-            <Col style={{ height: '100%', background: '#D8D8D8', padding: '15px', borderRadius: '8px' }}>
-              <Row>
+            <Col md={6} className="bg-light p-4 rounded">
+              <div className="border border-secondary p-3">
+              <Row className="mb-3"> 
+                <h3>{product.name}</h3>
+                <hr className="my-2" />
+              </Row>
+
+              <Row className="mb-3">
                 <Col>
                   <h3>Prices</h3>
                 </Col>
                 <Col>
-                  <button type="button" className="btn btn-warning">Add to Wishlist</button>
+                  <button type="button" className="btn btn-outline-danger">
+                    <span>Add to Wishlist            </span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-heart-fill" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"></path>
+                    </svg>
+                  </button>
                 </Col>
               </Row>
-              <Row>
-                <Col>
-                  <img src={"/imgs/amazonlogo.png"} style={{ maxWidth: '80%', maxHeight: '80%' }} alt="Product"></img>
+              <Row className="mb-3">
+                <Col xs={4}>
+                  <img src={"/imgs/amazonlogo.png"} className="img-fluid" alt="Amazon Logo" />
                 </Col>
-                <Col style={{ textAlign: 'right' }}>
+                <Col xs={4} className="text-center">
                   <PriceDiscount msrp={product.amzMSRP} current={product.amzCurrentPrice} />
                 </Col>
-                <Col>
-                <BuyButton link={product.amzURL}/>
+                <Col xs={4}>
+                  <BuyButton link={product.amzURL} />
                 </Col>
               </Row>
               <Row>
-                <Col>
-                  <img src={"/imgs/walmartlogo.png"} style={{ maxWidth: '80%', maxHeight: '80%' }} alt="Product"></img>
+                <Col xs={4}>
+                  <img src={"/imgs/walmartlogo.png"} className="img-fluid" alt="Walmart Logo" />
                 </Col>
-                <Col style={{ textAlign: 'right' }}>
+                <Col xs={4} className="text-center">
                   <PriceDiscount msrp={product.walMSRP} current={product.walCurrentPrice} />
                 </Col>
-                <Col>
-                  <BuyButton link={product.walURL}/>
+                <Col xs={4}>
+                  <BuyButton link={product.walURL} />
                 </Col>
               </Row>
+              </div>
             </Col>
-        </Row>
+          </Row>
+        </Container>
+
       </>
     );
-  } else {
-    return <h1> 404 NOT FOUND</h1>
   }
 };

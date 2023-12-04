@@ -1,10 +1,9 @@
-import { Col, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { ItemCard } from "../components/ItemCard";
 import { Product } from "../components/Product";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
-
 export function SearchResults() {
   const location = useLocation();
   const query:string = location.state;
@@ -35,7 +34,9 @@ export function SearchResults() {
     // It's an array, you can map over it
     return (
       <>
+      <Container className="m-5">
         <h1>Search Results</h1>
+        <hr className="my-4" />
         <Row md={3} xs={2} lg={4} className="g-3">
           {searchData.map((product: Product) => (
             <Col key={product.id}>
@@ -43,18 +44,22 @@ export function SearchResults() {
             </Col>
           ))}
         </Row>
+      </Container>
       </>
     );
   } else if (searchData) {
     // It's a single item, not an array
     return (
       <>
-        <h1>Search Result</h1>
-        <Row md={3} xs={2} lg={4} className="g-3">
-          <Col key={searchData.id}>
-            <ItemCard item={searchData} />
-          </Col>
-        </Row>
+        <Container className="m-5">
+          <h1>Search Results</h1>
+          <hr className="my-4" />
+          <Row md={3} xs={2} lg={4} className="g-3">
+            <Col key={searchData.id}>
+              <ItemCard item={searchData} />
+            </Col>
+          </Row>
+        </Container>
       </>
     );
   } else {
@@ -62,6 +67,7 @@ export function SearchResults() {
     return (
       <>
         <h1>No Results Found</h1>
+        <hr className="my-4" />
       </>
     );
   }

@@ -11,7 +11,7 @@ export default function RegisterPage() {
     return (
         <div className="text-center m-5-auto">
             <h2>Join us for great deals</h2>
-            <h5>Create your personal account</h5>
+            <h5>Create an account</h5>
             <form action="/home" className="login">
                 <p>
                     <label>create a Username</label><br/>

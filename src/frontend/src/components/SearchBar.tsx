@@ -28,7 +28,7 @@ export function SearchBar() {
           value={query}
           onChange={handleInputChange}
         />
-        <Button type="submit" variant="outline-secondary">
+        <Button type="submit" variant="warning">
           Search
         </Button>
       </InputGroup>

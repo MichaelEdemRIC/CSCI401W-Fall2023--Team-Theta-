@@ -141,3 +141,14 @@ form span {
 .login-home-page-title {
     color: #222
 }
+@media (min-width: 768px) {
+    button {
+      min-width: 40px; /* Adjust the minimum width as needed */
+      min-height: 40px; /* Adjust the minimum height as needed */
+    }
+  }
+.btn-outline-danger:hover {
+    background-color: red; /* Set the desired hover background color */
+    color: white; /* Set the text color on hover */
+    border-color: red; /* Set the border color on hover */
+  }

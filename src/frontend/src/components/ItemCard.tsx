@@ -1,6 +1,7 @@
 import { Card } from "react-bootstrap";
 //import { formatCurrency } from "../utilities/formatCurrency";
 import { Link } from "react-router-dom";
+import "../LoginApp.css";
 
 interface Props {
     item: {
@@ -10,28 +11,37 @@ interface Props {
         lowestPrice:string,
     }
 }
-const baseURL = "http://localhost:8000/";
+
 export function ItemCard({ item }: Props) {
     return (
         <>
-            <Link to={`/products/${item.id}`}>
-                <Card>
-                    <Card.Img
-                        variant="top"
-                        src={item.img}
-                        className="card-img-side"
-                        style={{ objectFit:"cover"}}
-                    />
-                    <Card.Body className='d-flex flex column'>
-                        <Card.Title className="d-flex justify-content-between align-items-baseline mb-4">
-                            <span className="fs-2">{item.name}</span>
-                            <span className="ms-2 text-muted">{item.lowestPrice}</span>
+<Link to={`/products/${item.id}`} style={{ textDecoration: "none", color: "inherit", display: "block", height: "100%" }}>
+      <Card style={{ height: "100%" }}>
+        <Card.Img
+          variant="top"
+          src={item.img}
+          className="card-img-side"
+          style={{ objectFit: "contain", height: "300px" }}
+        />
+        <Card.Body className="d-flex flex-column" >
+          <Card.Title  className="d-flex justify-content-between align-items-baseline mb-4">
+            <span  className="fs-6" style={{            
+                overflow: "hidden",
+                display: "-webkit-box",
+                WebkitBoxOrient: "vertical",
+                WebkitLineClamp: 2, // Adjust the number of lines before overflow
+                textOverflow: "ellipsis", 
+              }}>
+              {item.name}
+            </span>
 
-                        </Card.Title>
-                    </Card.Body>
-
-                </Card>
-            </Link>
+          </Card.Title>
+          <span className="fs-2" style={{ color: "green" }}>
+            {"$" + item.lowestPrice}
+        </span>
+        </Card.Body>
+      </Card>
+    </Link>
         </>
     )
 
