@@ -30,6 +30,11 @@ pip install -r requirements.txt
 python manage.py runserver
 ```
 - access the Get All Data endpoint via http://localhost:8000/api/get_data
+
+### Interact with User/Admin only endpoints
+- in the http request, you must include an authorization header formatted as "token (user's token id here)". 
+- when using curl, this header is added as -H "Authorization: token $token" where $token is replaced with a valid token id. for admin only endpoints, this id must be the admin's
+
 ### Authentication Endpoints
 base URL: http://localhost:8000
 
@@ -47,6 +52,17 @@ curl -X POST http://localhost:8000/login/ -d '{"username": "test_user", "passwor
 curl http://localhost:8000/test_token/ -H "Content-Type: application/json" -H "Authorization: token $token"
 ```
 
+**/test_user_token** - GET
+*token*
+```
+curl http://localhost:8000/test_user_token/ -H "Content-Type: application/json" -H "Authorization: token $token"
+```
+**/test_admin_token** - GET
+*token*
+```
+curl http://localhost:8000/test_admin_token/ -H "Content-Type: application/json" -H "Authorization: token $token"
+```
+
 ### Endpoints
 base URL: http://localhost:8000/api
 
@@ -62,17 +78,17 @@ curl -X PUT http://localhost:8000/api/get_data_id/1/ -d '{"name": "Horse Saddle"
 ```
 **/add_item** - POST
 ```
-curl -X POST http://localhost:8000/api/add_item/ -d '{"name": "Pony Spray", "price": "325.50"}' -H "Content-Type: application/json"
+curl -X POST http://localhost:8000/api/add_item/ -d '{"name": "Pony Spray", "price": "325.50"}' -H "Content-Type: application/json" -H "Authorization: token $token"
 ```
 **/search_name** - PUT
 ```
 curl -X PUT http://localhost:8000/api/search_name/ -d '{"name": "Horse Saddle"}' -H "Content-Type: application/json"
 ```
-**/upload_image** - POST
+**/upload_image** - POST -H "Content-Type: application/json"
 
 **/get_wishlist** - GET
 ```
-curl http://localhost:8000/api/get_wishlist/
+curl http://localhost:8000/api/get_wishlist/ -H "Authorization: token $token"
 ```
 **/add_wishlist_item** - POST
 ```
@@ -80,5 +96,5 @@ curl -X POST http://localhost:8000/api/add_wishlist_item/ -d '{"user": "test", "
 ```
 **/get_users** - GET
 ```
-curl http://localhost:8000/api/get_users/
+curl http://localhost:8000/api/get_users/ -H "Authorization: token $token"
 ```

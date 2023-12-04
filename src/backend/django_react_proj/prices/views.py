@@ -48,6 +48,8 @@ def get_data_id(request, pk):
 
 
 @api_view(['POST'])
+@authentication_classes([SessionAuthentication, TokenAuthentication])
+@permission_classes([IsAuthenticated, IsAdminUser])
 def add_item(request):
      if request.method == "POST":
         product_data = JSONParser().parse(request)
@@ -65,6 +67,8 @@ def search_name(request, name):
         return JsonResponse(serializer.data, safe=False)
 
 @api_view(['POST'])
+@authentication_classes([SessionAuthentication, TokenAuthentication])
+@permission_classes([IsAuthenticated, IsAdminUser])
 def upload_image(request):
     if request.method == "POST":
         data = request.data
@@ -78,6 +82,8 @@ def upload_image(request):
 
 # admin endpoint
 @api_view(['GET'])
+@authentication_classes([SessionAuthentication, TokenAuthentication])
+@permission_classes([IsAuthenticated, IsAdminUser])
 def get_wishlist(request):
     if request.method == 'GET':
         wishlist_items = Wishlist.objects.all()
@@ -86,6 +92,8 @@ def get_wishlist(request):
 
 # admin endpoint
 @api_view(['DELETE'])
+@authentication_classes([SessionAuthentication, TokenAuthentication])
+@permission_classes([IsAuthenticated, IsAdminUser])
 def delete_wishlist_id(request, pk):
 
     if request.method == "DELETE":
@@ -95,6 +103,8 @@ def delete_wishlist_id(request, pk):
 
 # user endpoint
 @api_view(['POST'])
+@authentication_classes([SessionAuthentication, TokenAuthentication])
+@permission_classes([IsAuthenticated])
 def add_wishlist_item(request):
      if request.method == "POST":
         wishlist_data = JSONParser().parse(request)
