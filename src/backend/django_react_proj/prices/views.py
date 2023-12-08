@@ -10,7 +10,7 @@ from rest_framework.authtoken.models import Token
 from django.shortcuts import get_object_or_404
 from rest_framework.decorators import authentication_classes, permission_classes
 from rest_framework.authentication import SessionAuthentication, TokenAuthentication
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, IsAdminUser
 
 from .models import Product 
 from .serializers import *
@@ -48,6 +48,8 @@ def get_data_id(request, pk):
 
 
 @api_view(['POST'])
+@authentication_classes([SessionAuthentication, TokenAuthentication])
+@permission_classes([IsAuthenticated, IsAdminUser])
 def add_item(request):
      if request.method == "POST":
         product_data = JSONParser().parse(request)
@@ -65,6 +67,8 @@ def search_name(request, name):
         return JsonResponse(serializer.data, safe=False)
 
 @api_view(['POST'])
+@authentication_classes([SessionAuthentication, TokenAuthentication])
+@permission_classes([IsAuthenticated, IsAdminUser])
 def upload_image(request):
     if request.method == "POST":
         data = request.data
@@ -78,6 +82,8 @@ def upload_image(request):
 
 # admin endpoint
 @api_view(['GET'])
+@authentication_classes([SessionAuthentication, TokenAuthentication])
+@permission_classes([IsAuthenticated, IsAdminUser])
 def get_wishlist(request):
     if request.method == 'GET':
         wishlist_items = Wishlist.objects.all()
@@ -86,6 +92,8 @@ def get_wishlist(request):
 
 # admin endpoint
 @api_view(['DELETE'])
+@authentication_classes([SessionAuthentication, TokenAuthentication])
+@permission_classes([IsAuthenticated, IsAdminUser])
 def delete_wishlist_id(request, pk):
 
     if request.method == "DELETE":
@@ -95,6 +103,8 @@ def delete_wishlist_id(request, pk):
 
 # user endpoint
 @api_view(['POST'])
+@authentication_classes([SessionAuthentication, TokenAuthentication])
+@permission_classes([IsAuthenticated])
 def add_wishlist_item(request):
      if request.method == "POST":
         wishlist_data = JSONParser().parse(request)
@@ -134,8 +144,22 @@ def test_token(request):
 
 # admin endpoint
 @api_view(['GET'])
+@authentication_classes([SessionAuthentication, TokenAuthentication])
+@permission_classes([IsAuthenticated, IsAdminUser])
 def get_users(request):
     if request.method == 'GET':
         product = User.objects.all()
         serializer = UserSerializer(product, many=True)
         return JsonResponse(serializer.data, safe=False)
+    
+@api_view(['GET'])
+@authentication_classes([SessionAuthentication, TokenAuthentication])
+@permission_classes([IsAuthenticated, IsAdminUser])
+def test_admin_token(request):
+    return Response("passed for {}".format(request.user.id))
+
+@api_view(['GET'])
+@authentication_classes([SessionAuthentication, TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def test_user_token(request):
+    return Response("passed for {}".format(request.user.id))
