@@ -12,18 +12,20 @@ import RegisterPage from './pages/RegisterPage.tsx';
 //Components
 import { Navbar } from "./components/Navbar";
 import { WishlistProvider } from "./context/WishlistContext";
+import AdminAddItem from "./pages/AdminAddItem.tsx";
+import { AdminNav } from "./components/AdminNav.tsx";
 function App() {
   return (
     <WishlistProvider>
     
       <Navbar />
-
+      <AdminNav />
       <Container className="mb-5">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/search-results" element={<SearchResults  />} />
-          <Route path="/add" element={<EntryForm />} />
+          <Route path="/add" element={<AdminAddItem />} />
           <Route path="/products/:id" element={<ProductPage />} />
           <Route path="/login" element={ <LoginPage /> } />
           <Route path="/register" element={ <RegisterPage /> } />
