@@ -1,14 +1,13 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { Col, Row, Container, ListGroupItem } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import "../LoginApp.css";
-import { ChangeEvent, useState, useEffect } from "react";
+import { useState } from "react";
 import { Product } from "../components/Product";
 
 export default function AdminAddItem() {
   const addURL = "http://localhost:8000/api/add_item/";
   const imgURL = "http://localhost:8000/api/upload_image/";
-  const [token, setToken] = useState<string>("");
   const [product, setProduct] = useState<Product>({
     amzCurrentPrice: "",
     amzMSRP: "",
@@ -16,6 +15,7 @@ export default function AdminAddItem() {
     img: "",
     lowestPrice: "",
     name: "",
+    id: 0,
     walCurrentPrice: "",
     walMSRP: "",
     walURL: "",
@@ -55,8 +55,6 @@ export default function AdminAddItem() {
     try {
       const response = await axios.post(addURL, { product })
       console.log("Response:", response.data);
-      const token = response.data.token;
-      setToken(token);
       navigate("/");
     } catch (error: any) {
       console.error("Error:", error.message);

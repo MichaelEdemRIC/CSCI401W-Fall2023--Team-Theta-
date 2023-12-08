@@ -7,7 +7,6 @@ import axios from "axios";
 export function Home() {
   const [items, setItems] = useState<Product[] | null>(null);
   const itemsEndpoint = "http://localhost:8000/api/get_data/";
-
   useEffect(() => {
     const fetchData = async () => {
       try {

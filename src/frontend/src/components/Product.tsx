@@ -6,7 +6,7 @@ export type Product = {
   img: string;
   lowestPrice: string;
   name: string;
-  id?: number;
+  id: number;
   walCurrentPrice: string;
   walMSRP: string;
   walURL: string;

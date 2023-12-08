@@ -1,17 +1,18 @@
 
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
-
 import '../LoginApp.css'
-import { ChangeEvent, useState, useEffect } from 'react';
+import { ChangeEvent, useState } from 'react';
+import { useAuth } from '../context/AuthContext';
 
 export default function LoginPage() {
-
+    const { login, logout } = useAuth();
     const loginURL = "http://localhost:8000/login/";
     const [username, setUsername] = useState<string>('');
     const [password, setPassword] = useState<string>('');
-    const [token, setToken] = useState<string>('');
 
+    sessionStorage.removeItem('token');
+    logout()
     const navigate = useNavigate();
     
     const handleUsernameChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -31,8 +32,9 @@ export default function LoginPage() {
         try {
             const response = await axios.post(loginURL, { username, password });
             console.log("Response:", response.data);
-            const token = response.data.token;
-            setToken(token)
+            sessionStorage.setItem('token', response.data.token);
+            console.log("Local Storage:", localStorage);
+            login();
             navigate('/');
         } catch (error:any) {
             console.error("Error:", error.message);

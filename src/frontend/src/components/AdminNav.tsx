@@ -1,11 +1,8 @@
-import {Button, Container, Nav, Navbar as NavbarBs} from "react-bootstrap"
+import { Container, Nav, Navbar as NavbarBs} from "react-bootstrap"
 import { NavLink } from "react-router-dom"
-import { SearchBar } from "./SearchBar";
-import { useWishlist } from "../context/WishlistContext";
 import "../LoginApp.css"
 
 export function AdminNav() {
-    const { openList } = useWishlist()
     return (
         <NavbarBs 
             sticky="top" 
