@@ -1,22 +1,25 @@
 import { Nav } from "react-bootstrap";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import { Product } from "./Product";
 import axios from "axios";
 
-interface AddtoWishlistButtonProps {
-    item: Product;
-  }
 
-export function AddtoWishlistButton({ item }: AddtoWishlistButtonProps) {
+export function AddtoWishlistButton({ id }: { id: number }) {
   const { isLoggedIn } = useAuth();
   const navigate = useNavigate();
+  const username = sessionStorage.getItem("user");
 
   const wishlistURL = "http://localhost:8000/api/add_wishlist_item/"
 
+  const requestData = {
+    user: username,
+    product_id: id,
+  };
+
   const AddToWishlist = async () => {
     try {
-        
+      const response = await axios.post(wishlistURL, requestData);
+      console.log(response)
       } catch (error: any) {
 
       }

@@ -72,7 +72,7 @@ def search_name(request, name):
 def upload_image(request):
     if request.method == "POST":
         data = request.data
-        obj_id = data[obj_id]
+        obj_id = data['obj_id']
         obj = Product.objects.get(pk=obj_id)
 
         obj.image = request.FILES.get('image')

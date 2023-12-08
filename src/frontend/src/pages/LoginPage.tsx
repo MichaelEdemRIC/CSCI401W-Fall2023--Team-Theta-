@@ -12,6 +12,7 @@ export default function LoginPage() {
     const [password, setPassword] = useState<string>('');
 
     sessionStorage.removeItem('token');
+    sessionStorage.removeItem('user');
     logout()
     const navigate = useNavigate();
     
@@ -33,6 +34,7 @@ export default function LoginPage() {
             const response = await axios.post(loginURL, { username, password });
             console.log("Response:", response.data);
             sessionStorage.setItem('token', response.data.token);
+            sessionStorage.setItem('user', username);
             console.log("Local Storage:", localStorage);
             login();
             navigate('/');

@@ -49,7 +49,7 @@ export function ProductPage() {
                   <h3>Prices</h3>
                 </Col>
                 <Col>
-                  <AddtoWishlistButton item={product}/>
+                  <AddtoWishlistButton id={product.id}/>
                 </Col>
               </Row>
               <Row className="mb-3">

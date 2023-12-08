@@ -21,6 +21,7 @@ function App() {
       <WishlistProvider>
       
         <Navbar />
+        <AdminNav />
         <Container className="mb-5">
           <Routes>
             <Route path="/" element={<Home />} />

@@ -178,7 +178,7 @@ export default function AdminAddItem() {
             value={product.lowestPrice}
             className="border p- rounded"
             style={{ width: "100%", boxSizing: "border-box" }}
-            onChange={(e) => setProduct({ ...product, name: e.target.value })}
+            onChange={(e) => setProduct({ ...product, lowestPrice: e.target.value })}
             required
           />
         </p>
