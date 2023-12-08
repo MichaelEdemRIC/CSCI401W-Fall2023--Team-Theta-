@@ -3,14 +3,13 @@ import { Link } from 'react-router-dom'
 import axios from 'axios';
 
 import '../LoginApp.css'
-import { ChangeEvent, useState, useEffect } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function RegisterPage() {
     const registerURL = "http://localhost:8000/signup/";
     const [username, setUsername] = useState<string>('');
     const [password, setPassword] = useState<string>('');
-    const [token, setToken] = useState<string>('');
     const navigate = useNavigate();
 
     const handleUsernameChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -30,8 +29,6 @@ export default function RegisterPage() {
         try {
             const response = await axios.post(registerURL, { username, password });
             console.log("Response:", response.data);
-            const token = response.data.token;
-            setToken(token)
             navigate('/');
         } catch (error:any) {
             console.error("Error:", error.message);

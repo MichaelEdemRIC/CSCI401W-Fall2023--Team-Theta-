@@ -2,7 +2,7 @@ export type Product = {
   amzCurrentPrice: string;
   amzMSRP: string;
   amzURL: string;
-  dateAdded: string;
+  dateAdded?: string;
   img: string;
   lowestPrice: string;
   name: string;
