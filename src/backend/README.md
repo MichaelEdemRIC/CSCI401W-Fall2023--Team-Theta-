@@ -70,7 +70,7 @@ base URL: http://localhost:8000/api
 ```
 curl http://localhost:8000/api/get_data/
 ```
-**/get_data_id** - GET, PUT
+**/get_data_id** - GET
 ```
 curl http://localhost:8000/api/get_data_id/1/
 ```
