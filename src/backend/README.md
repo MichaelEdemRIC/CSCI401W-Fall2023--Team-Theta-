@@ -73,18 +73,28 @@ curl http://localhost:8000/api/get_data/
 **/get_data_id** - GET, PUT
 ```
 curl http://localhost:8000/api/get_data_id/1/
-curl -X PUT http://localhost:8000/api/get_data_id/1/ -d '{"name": "something", "amzMSRP": 4.50, "amzCurrentPrice": 3.50, "walMSRP": 4.99, "walCurrentPrice": 3.98, "lowestPrice": 3.50, "amzURL": "https://www.amazon.com/something", "walURL": "https://www.walmart.com/something"}' -H "Content-Type: application/json" -H "Authorization: token $token"
-
 ```
 **/add_item** - POST
 ```
 curl -X POST http://localhost:8000/api/add_item/ -d '{"name": "something", "amzMSRP": 4.50, "amzCurrentPrice": 3.50, "walMSRP": 4.99, "walCurrentPrice": 3.98, "lowestPrice": 3.50, "amzURL": "https://www.amazon.com/something", "walURL": "https://www.walmart.com/something"}' -H "Content-Type: application/json" -H "Authorization: token $token"
 ```
+**/update_item** - PUT
+```
+curl -X PUT http://localhost:8000/api/get_data_id/1/ -d '{"name": "something", "amzMSRP": 4.50, "amzCurrentPrice": 3.50, "walMSRP": 4.99, "walCurrentPrice": 3.98, "lowestPrice": 3.50, "amzURL": "https://www.amazon.com/something", "walURL": "https://www.walmart.com/something"}' -H "Content-Type: application/json" -H "Authorization: token $token"
+```
+
 **/search_name** - PUT
 ```
 curl -X PUT http://localhost:8000/api/search_name/ -d '{"name": "Horse Saddle"}' -H "Content-Type: application/json"
 ```
+**/get_users** - GET
+```
+curl http://localhost:8000/api/get_users/ -H "Authorization: token $token"
+```
 **/upload_image** - POST -H "Content-Type: application/json"
+
+### Wishlist Endpoints
+base URL: http://localhost:8000/api
 
 **/get_wishlist** - GET
 ```
@@ -95,9 +105,6 @@ curl http://localhost:8000/api/get_wishlist/ -H "Authorization: token $token"
 curl -X POST http://localhost:8000/api/add_wishlist_item/ -d '{"product_id": 1}' -H "Content-Type: application/json" -H "Authorization: token $token"
 ```
 **/get_user_wishlist** - GET
-```curl http://localhost:8000/api/get_user_wishlist/ -H "Content-Type: application/json" -H "Authorization: token $token"
 ```
-**/get_users** - GET
-```
-curl http://localhost:8000/api/get_users/ -H "Authorization: token $token"
+curl http://localhost:8000/api/get_user_wishlist/ -H "Content-Type: application/json" -H "Authorization: token $token"
 ```
