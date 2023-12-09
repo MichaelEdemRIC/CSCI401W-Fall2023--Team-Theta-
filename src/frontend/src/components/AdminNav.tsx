@@ -16,7 +16,6 @@ export function AdminNav() {
     <>
       <NavbarBs
         key={key}
-        sticky="top"
         className="navbar-brand navbar-light justify-content-between"
         style={{
           backgroundColor: "khaki",

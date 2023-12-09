@@ -18,8 +18,11 @@ function App() {
   return (
     <AuthProvider>
       <WishlistProvider>
-        <Navbar />
-        <AdminNav />
+        <div>
+          <Navbar />
+          <AdminNav />
+        </div>
+
         <Container className="mb-5">
             <Routes>
               <Route path="/" element={<Home />} />
