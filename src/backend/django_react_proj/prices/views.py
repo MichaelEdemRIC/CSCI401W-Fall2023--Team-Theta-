@@ -38,16 +38,10 @@ def get_data_id(request, pk):
     if request.method == "GET":
         serializer = ProductSerializer(product)
         return JsonResponse(serializer.data)
-    
-    elif request.method == "PUT":
-        product_data = JSONParser().parse(request)
-        serializer = ProductSerializer(product, data=product_data)
-        if serializer.is_valid():
-            serializer.save()
-            return JsonResponse(serializer.data)
-        return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['PUT'])
+@authentication_classes([SessionAuthentication, TokenAuthentication])
+@permission_classes([IsAuthenticated, IsAdminUser])
 def update_item(request, pk):
     try:
         product = Product.objects.get(pk=pk)
