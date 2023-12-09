@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { json, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Col, Row } from "react-bootstrap";
 import "../LoginApp.css";
@@ -33,26 +33,26 @@ export default function AdminAddItem() {
     walURL: product.walURL,
   }
   const formdata2 = {
-    "id": 1,
-    "name": "Purina ONE Chicken and Rice Formula Dry Dog Food - 16.5 lb. Bag",
-    "amzMSRP": "26.16",
-    "amzCurrentPrice": "26.16",
-    "walMSRP": "29.92",
-    "walCurrentPrice": "29.92",
-    "lowestPrice": "26.16",
-    "img": "/images/purina.jpeg",
-    "amzURL": "https://www.amazon.com/Purina-Smartblend-Natural-Chicken-Formula/dp/B006JCUGVQ/ref=sr_1_5?crid=PPKTOK7M19OF",
-    "walURL": "https://www.walmart.com/ip/Purina-One-Dry-Dog-Food-for-Adult-Dogs-High-Protein-Real-Chicken-Rice-16-5-lb-Bag/21128249",
-    "dateAdded": "2023-10-28"
-}
+    "name": product.name,
+    "amzMSRP": product.amzMSRP,
+    "amzCurrentPrice": product.amzCurrentPrice,
+    "walMSRP": product.walMSRP,
+    "walCurrentPrice": product.walCurrentPrice,
+    "lowestPrice": product.lowestPrice,
+    "amzURL": product.amzURL,
+    "walURL": product.walURL,
+    "img": product.img
+  }
+  const jsonString = JSON.stringify(formdata2);
   const navigate = useNavigate();
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault(); // Prevent the default form submission\
-    console.log(formdata);
+    console.log(formdata2);
+    console.log(jsonString)
     const storedToken = sessionStorage.getItem("token")
     try {
-      const response = await axios.post(addURL, formdata, {
+      const response = await axios.post(addURL, jsonString, {
         headers : {
           'Content-Type': 'application/json',
           'Authorization': `token ${storedToken}`
