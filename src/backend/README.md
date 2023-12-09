@@ -94,6 +94,9 @@ curl http://localhost:8000/api/get_wishlist/ -H "Authorization: token $token"
 ```
 curl -X POST http://localhost:8000/api/add_wishlist_item/ -d '{"user": "test", "product_id": 1}' -H "Content-Type: application/json"
 ```
+**/get_user_wishlist** - GET
+```curl http://localhost:8000/api/get_user_wishlist/ -H "Content-Type: application/json" -H "Authorization: token $token"
+```
 **/get_users** - GET
 ```
 curl http://localhost:8000/api/get_users/ -H "Authorization: token $token"
