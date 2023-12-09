@@ -3,11 +3,10 @@ import axios from "axios";
 import { Col, Row } from "react-bootstrap";
 import "../LoginApp.css";
 import { useState } from "react";
-import { Product } from "../components/Product";
+import { Product, ProductInput } from "../components/Product";
 
 export default function AdminAddItem() {
   const addURL = "http://localhost:8000/api/add_item/";
-  const imgURL = "http://localhost:8000/api/upload_image/";
   const [product, setProduct] = useState<Product>({
     amzCurrentPrice: "",
     amzMSRP: "",
@@ -15,46 +14,45 @@ export default function AdminAddItem() {
     img: "",
     lowestPrice: "",
     name: "",
-    id: 0,
     walCurrentPrice: "",
     walMSRP: "",
     walURL: "",
+    dateAdded: "",
+    id: 11,
   });
-  const [imageFile, setImageFile] = useState<File | null>(null); // Step 1: State for selected image file
+
+  const formdata = {
+    amzCurrentPrice: product.amzCurrentPrice,
+    amzMSRP: product.amzMSRP,
+    amzURL: product.amzURL,
+    img: product.img,
+    lowestPrice: product.lowestPrice,
+    name: product.name,
+    walCurrentPrice: product.walCurrentPrice,
+    walMSRP: product.walMSRP,
+    walURL: product.walURL,
+  }
+  const formdata2 = {
+    "id": 1,
+    "name": "Purina ONE Chicken and Rice Formula Dry Dog Food - 16.5 lb. Bag",
+    "amzMSRP": "26.16",
+    "amzCurrentPrice": "26.16",
+    "walMSRP": "29.92",
+    "walCurrentPrice": "29.92",
+    "lowestPrice": "26.16",
+    "img": "/images/purina.jpeg",
+    "amzURL": "https://www.amazon.com/Purina-Smartblend-Natural-Chicken-Formula/dp/B006JCUGVQ/ref=sr_1_5?crid=PPKTOK7M19OF",
+    "walURL": "https://www.walmart.com/ip/Purina-One-Dry-Dog-Food-for-Adult-Dogs-High-Protein-Real-Chicken-Rice-16-5-lb-Bag/21128249",
+    "dateAdded": "2023-10-28"
+}
   const navigate = useNavigate();
-
-  const handleImage = (event: React.ChangeEvent<HTMLInputElement>) => {
-    // Step 1: Update the state with the selected image file
-    if (event.target.files && event.target.files.length > 0) {
-      setImageFile(event.target.files[0]);
-    }
-  };
-
-  const handleImageUpload = async () => {
-    // Step 1: Upload the image file to the backend
-    if (imageFile) {
-      const formData = new FormData();
-      formData.append('image', imageFile);
-      console.log(formData);
-      try {
-        const response = await axios.post(imgURL, formData);
-        const filename = response.data.filename;
-        setProduct({ ...product, img: filename });
-        console.log('Image uploaded successfully:', filename);
-      } catch (error:any) {
-        console.error('Error uploading image:', error.message);
-        // Handle errors, such as displaying an error message to the user
-      }
-    }
-  };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault(); // Prevent the default form submission\
-    await handleImageUpload();
-    console.log({product});
+    console.log(formdata);
     const storedToken = sessionStorage.getItem("token")
     try {
-      const response = await axios.post(addURL, { product }, {
+      const response = await axios.post(addURL, formdata, {
         headers : {
           'Content-Type': 'application/json',
           'Authorization': `token ${storedToken}`
@@ -64,7 +62,6 @@ export default function AdminAddItem() {
       navigate("/");
     } catch (error: any) {
       console.error("Error:", error.message);
-      // Handle errors, such as displaying an error message to the user
     }
   };
   return (
@@ -86,14 +83,14 @@ export default function AdminAddItem() {
           />
         </p>
         <p>
-          <label>Item Thumbnail</label>
+          <label>Image File Name</label>
           <br />
           <input
-            type="file"
+            type="text"
             name="img"
             accept=".png, .jpeg, .jpg"
             style={{ width: "100%", boxSizing: "border-box" }}
-            onChange={handleImage}
+            onChange={(e) => setProduct({ ...product, img: e.target.value })}
             required
           />
         </p>

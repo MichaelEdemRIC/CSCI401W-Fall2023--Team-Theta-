@@ -10,7 +10,7 @@ type WishlistProps = {
 }
 
 export function Wishlist({ isOpen }: WishlistProps) {
-    const wishlistURL = "http://localhost:8000/api/get_wishlist/"
+    const wishlistURL = "http://localhost:8000/api/get_user_wishlist/"
     const [items, setItems] = useState<Product[]>([]);
     useEffect(() => {
         const fetchData = async () => {

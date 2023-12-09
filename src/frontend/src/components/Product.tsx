@@ -11,3 +11,15 @@ export type Product = {
   walMSRP: string;
   walURL: string;
 };
+
+export type ProductInput = {
+  amzCurrentPrice: string;
+  amzMSRP: string;
+  amzURL: string;
+  img: string;
+  lowestPrice: string;
+  name: string;
+  walCurrentPrice: string;
+  walMSRP: string;
+  walURL: string;
+}
