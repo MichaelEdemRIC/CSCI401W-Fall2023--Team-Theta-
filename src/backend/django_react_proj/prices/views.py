@@ -62,6 +62,7 @@ def update_item(request, pk):
 def add_item(request):
      if request.method == "POST":
         product_data = JSONParser().parse(request)
+        print(product_data)
         serializer = ProductSerializer(data=product_data)
         if serializer.is_valid():
             serializer.save()
