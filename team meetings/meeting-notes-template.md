@@ -2,7 +2,7 @@
 
 ### 📅 **Meeting Date**: [date]
 
-### 🕒 **Time**: [1:00 PM] - [2:00 PM]
+### 🕒 **Time**: [1:00 PM] - [4:30 PM]
 
 ### 📍 **Location**: [Virtual - Teams]
 
