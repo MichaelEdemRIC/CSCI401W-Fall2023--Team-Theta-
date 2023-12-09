@@ -73,12 +73,12 @@ curl http://localhost:8000/api/get_data/
 **/get_data_id** - GET, PUT
 ```
 curl http://localhost:8000/api/get_data_id/1/
-curl -X PUT http://localhost:8000/api/get_data_id/1/ -d '{"name": "Horse Saddle", "price": "129.00"}' -H "Content-Type: application/json"
+curl -X PUT http://localhost:8000/api/get_data_id/1/ -d '{"name": "something", "amzMSRP": 4.50, "amzCurrentPrice": 3.50, "walMSRP": 4.99, "walCurrentPrice": 3.98, "lowestPrice": 3.50, "amzURL": "https://www.amazon.com/something", "walURL": "https://www.walmart.com/something"}' -H "Content-Type: application/json" -H "Authorization: token $token"
 
 ```
 **/add_item** - POST
 ```
-curl -X POST http://localhost:8000/api/add_item/ -d '{"name": "Pony Spray", "price": "325.50"}' -H "Content-Type: application/json" -H "Authorization: token $token"
+curl -X POST http://localhost:8000/api/add_item/ -d '{"name": "something", "amzMSRP": 4.50, "amzCurrentPrice": 3.50, "walMSRP": 4.99, "walCurrentPrice": 3.98, "lowestPrice": 3.50, "amzURL": "https://www.amazon.com/something", "walURL": "https://www.walmart.com/something"}' -H "Content-Type: application/json" -H "Authorization: token $token"
 ```
 **/search_name** - PUT
 ```
