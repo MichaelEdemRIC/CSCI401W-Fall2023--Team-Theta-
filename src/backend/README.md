@@ -93,7 +93,6 @@ curl -X PUT http://localhost:8000/api/search_name/ -d '{"name": "Horse Saddle"}'
 ```
 curl http://localhost:8000/api/get_users/ -H "Authorization: token $token"
 ```
-**/upload_image** - POST -H "Content-Type: application/json"
 
 ### Wishlist Endpoints
 base URL: http://localhost:8000/api

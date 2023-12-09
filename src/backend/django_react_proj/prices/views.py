@@ -83,20 +83,6 @@ def search_name(request, name):
         serializer = ProductSerializer(product, context={'request': request}, many=True)
         return JsonResponse(serializer.data, safe=False)
 
-@api_view(['POST'])
-@authentication_classes([SessionAuthentication, TokenAuthentication])
-@permission_classes([IsAuthenticated, IsAdminUser])
-def upload_image(request):
-    if request.method == "POST":
-        data = request.data
-        obj_id = data[obj_id]
-        obj = Product.objects.get(pk=obj_id)
-
-        obj.image = request.FILES.get('image')
-        obj.save()
-
-        return Response('Image was successfully uploaded')
-
 # admin endpoint
 @api_view(['GET'])
 @authentication_classes([SessionAuthentication, TokenAuthentication])
