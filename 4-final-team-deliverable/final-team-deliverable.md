@@ -52,13 +52,13 @@
 
    Recall a specific challenge, like debugging a code issue together. Explain how you collaborated to identify the bug's source and successfully resolved it. This experience showcases your problem-solving and teamwork skills. 
 
-Getting search to return multiple values. Initially it would only return one item, even though we knew that there were multiple items with a similar name in the database. We read the Django documentation about models and serializers, and were able to figure out the proper way to create the search endpoint and have it return all the values that matched the search string 
+- Getting search to return multiple values. Initially it would only return one item, even though we knew that there were multiple items with a similar name in the database. We read the Django documentation about models and serializers, and were able to figure out the proper way to create the search endpoint and have it return all the values that matched the search string 
 
-Learning how to add products to the database. Initially we were adding items manually and it wasn’t very efficient. Trying to create an api endpoint that did this was challenging because it was one of the first endpoints that we created that would do something like this. The challenge was a combination of learning the different Django terminology and how that translated into terms that we understood, learning how to create an api, and figuring out the right way to make this type of call to the Django model. The Django documentation was helpful here. 
+- Learning how to add products to the database. Initially we were adding items manually and it wasn’t very efficient. Trying to create an api endpoint that did this was challenging because it was one of the first endpoints that we created that would do something like this. The challenge was a combination of learning the different Django terminology and how that translated into terms that we understood, learning how to create an api, and figuring out the right way to make this type of call to the Django model. The Django documentation was helpful here. 
 
-Getting the wishlist model to only require username and product.id, but then return all the product data when that endpoint is called. We learned that we could update the wishlist serializer to just accept a product ID, but then have that serializer reference the product serializer to return the other values when called. 
+- Getting the wishlist model to only require username and product.id, but then return all the product data when that endpoint is called. We learned that we could update the wishlist serializer to just accept a product ID, but then have that serializer reference the product serializer to return the other values when called. 
 
-Connecting the frontend to the backend to display items in the database that lead to individual product pages. 
+- Connecting the frontend to the backend to display items in the database that lead to individual product pages. 
 
   
 
@@ -91,7 +91,7 @@ Connecting the frontend to the backend to display items in the database that lea
 
 ### Product Demo 
 
-Share simple examples of your product's functionality: 
+   Share simple examples of your product's functionality: 
 
 **Example 1: Admin adds product to database:** administrative users have the ability to add products from other shopping websites to our database, so that regular users can keep tabs on their price changes. 
 
@@ -117,15 +117,13 @@ Share simple examples of your product's functionality:
 This explains a user passing a username and password, the authentication system returning a token, and the token being used to access api endpoints. It also explains the different level of access that an administrator has compared to a user.  
 
 ### Codebase Exploration 
-Illustrate a coding concept with a relatable analogy: 
+   Illustrate a coding concept with a relatable analogy: 
 
  **Analogy: React components are like building a house** 
 
 - React Components – Instead of having one html file for all the frontend tags, react allows you to create your own components and implement them as custom tags. The base file is like a foundation for a house, and components like the wall, doors, windows, and roof can be defined in their own files. Instead of reinventing the wheel every time you want another door or another window, you can just add a door component or a window component to your foundation. If multiple people are building the house, only the person making the door needs to know how the door is made. The people putting it where it needs to go only need to know that it is a door. Defining all the complex code in a high-level tag allows components to be built and reused in a way that is more organized and readable. 
 
 ### Access Your Work 
-
-  
 
 - **[Presentation Slides](https://onedrive.live.com/edit?id=4CEFB60D7CFBF1C7!180&resid=4CEFB60D7CFBF1C7!180&ithint=file%2cpptx&authkey=!AARYDJHv-dax6e8&wdo=2&cid=4cefb60d7cfbf1c7)** 
 
@@ -134,6 +132,7 @@ Illustrate a coding concept with a relatable analogy:
 - **Other Materials:** Include links to diagrams or documents you created for your project. 
 
 **[ Website layout concept images ]** 
+
   **Dashboard:**
   ![](images/Homepage.png)
 
@@ -147,6 +146,7 @@ Illustrate a coding concept with a relatable analogy:
   ![](images/wishlist.png)
 
 **[ C-4 Diagram for our original backend plan ]** 
+
   **System Context:** 
   
   ![](images/systemcontext.png)
@@ -167,13 +167,13 @@ Illustrate a coding concept with a relatable analogy:
 
 1. **Team Collaboration Skills:** Reflect on a time when coordinating with team members improved a project's outcome or efficiency. 
 
-**Sean Parks** - When connecting the frontend to the api endpoints in order to display things like the database or wishlist elements, there were times where Aaron and I or Nick and I worked together to debug what the backend was expecting and how I needed to format the frontend request so that the data was sent correctly. Because I focused less on the backend, I was unfamiliar with what certain endpoints were expecting, but through having them update the readme and explain it to me, I better understood how the backend worked by interacting with it. 
+- **Sean Parks** - When connecting the frontend to the api endpoints in order to display things like the database or wishlist elements, there were times where Aaron and I or Nick and I worked together to debug what the backend was expecting and how I needed to format the frontend request so that the data was sent correctly. Because I focused less on the backend, I was unfamiliar with what certain endpoints were expecting, but through having them update the readme and explain it to me, I better understood how the backend worked by interacting with it. 
 
-**Stanely Aaron** - worked back and forth with Sean to get image uploads to work, and Mike suggested that we use ChatGPT to help debug. We pasted in our code and it gave the suggestion to use a multi part form to submit this data and reference an actual image file instead of a string. We were able to take this suggestion and tailor it to our needs. We can now upload images when creating new products in our database. 
+- **Stanley Aaron** - worked back and forth with Sean to get image uploads to work, and Mike suggested that we use ChatGPT to help debug. We pasted in our code and it gave the suggestion to use a multi part form to submit this data and reference an actual image file instead of a string. We were able to take this suggestion and tailor it to our needs. We can now upload images when creating new products in our database. 
 
-**Nick Parks**  - me and Aaron worked together several times on the backend over the course of the project. I worked on the models for users in the database, while he worked on giving each user the capability to save the wishlist. In addition, we also agreed on an authentication method that would work best for authenticating users in our project. 
+- **Nick Parks**  - me and Aaron worked together several times on the backend over the course of the project. I worked on the models for users in the database, while he worked on giving each user the capability to save the wishlist. In addition, we also agreed on an authentication method that would work best for authenticating users in our project. 
 
-**Michael Edem** : often we collaborate with each other on how to implement different functions and components to our website, this back and forth between us has led to great success in our project one example being when me and Sean worked together for one Monday afternoon to get the login system up and running. 
+- **Michael Edem** : often we collaborate with each other on how to implement different functions and components to our website, this back and forth between us has led to great success in our project one example being when me and Sean worked together for one Monday afternoon to get the login system up and running. 
 
 2. **Problem-Solving Abilities:** Share a situation where you had to troubleshoot a technical issue and how you approached the problem-solving process. 
 
@@ -181,10 +181,10 @@ Illustrate a coding concept with a relatable analogy:
 
 3. **Contributions to the Project:** Discuss a specific task you contributed to and how your involvement positively impacted the project's development. 
 
-**Sean Parks** - I developed the general site layout and connected the site to the backend so that it could be functional. I also established a lot of the general styling for the site with the logo, color scheme, and organization. 
+- **Sean Parks** - I developed the general site layout and connected the site to the backend so that it could be functional. I also established a lot of the general styling for the site with the logo, color scheme, and organization. 
 
-**Stanely Aaron** - the initial backend setup and initial product endpoints. This allowed us to present something that the frontend was able to connect to and pull data from. 
+- **Stanley Aaron** - the initial backend setup and initial product endpoints. This allowed us to present something that the frontend was able to connect to and pull data from. 
 
-**Nick Parks**  - I worked on getting a user model for us to use for storing users in the database. Initially I created a custom model for use by the project, but instead I decided to use the default model that comes with Django Rest Framework instead. In addition, I researched session authentication and implemented it into our user and admin authenticated endpoints. 
+- **Nick Parks**  - I worked on getting a user model for us to use for storing users in the database. Initially I created a custom model for use by the project, but instead I decided to use the default model that comes with Django Rest Framework instead. In addition, I researched session authentication and implemented it into our user and admin authenticated endpoints. 
 
-**Michael Edem** I developed an early version of the login page to our website, this acted as a first steppingstone to our development of the account system giving each user the ability to make their own account and add their favorite items to a Wishlist.
+- **Michael Edem** I developed an early version of the login page to our website, this acted as a first steppingstone to our development of the account system giving each user the ability to make their own account and add their favorite items to a Wishlist.
