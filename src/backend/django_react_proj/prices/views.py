@@ -2,9 +2,10 @@
 
 # Create your views here.
 from django.http.response import JsonResponse
-from rest_framework.parsers import JSONParser 
+from rest_framework.parsers import JSONParser, MultiPartParser
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
+from rest_framework.decorators import parser_classes
 from rest_framework import status
 from rest_framework.authtoken.models import Token
 from django.shortcuts import get_object_or_404
@@ -59,9 +60,11 @@ def update_item(request, pk):
 @api_view(['POST'])
 @authentication_classes([SessionAuthentication, TokenAuthentication])
 @permission_classes([IsAuthenticated, IsAdminUser])
+@parser_classes([JSONParser, MultiPartParser])
 def add_item(request):
      if request.method == "POST":
-        product_data = JSONParser().parse(request)
+        product_data = request.data
+        print(product_data)
         if  "http" not in product_data['walURL']:
             product_data['walURL'] = "http://" + product_data['walURL']
         if  "http" not in product_data['amzURL']:
