@@ -129,7 +129,7 @@ This explains a user passing a username and password, the authentication system 
 
 - **[Source Code Repository](https://github.com/MichaelEdemRIC/CSCI401W-Fall2023--Team-Theta-)** 
 
-- **Other Materials:** Include links to diagrams or documents you created for your project. 
+- **Other Materials:** 
 
 **[ Website layout concept images ]** 
 
