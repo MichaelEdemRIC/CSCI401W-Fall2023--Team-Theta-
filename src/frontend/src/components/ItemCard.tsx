@@ -2,6 +2,7 @@ import { Card } from "react-bootstrap";
 //import { formatCurrency } from "../utilities/formatCurrency";
 import { Link } from "react-router-dom";
 import "../LoginApp.css";
+import { useWishlist } from "../context/WishlistContext";
 
 interface Props {
     item: {
@@ -13,9 +14,10 @@ interface Props {
 }
 
 export function ItemCard({ item }: Props) {
+    const { closeList } = useWishlist();
     return (
         <>
-<Link to={`/products/${item.id}`} style={{ textDecoration: "none", color: "inherit", display: "block", height: "100%" }}>
+    <Link to={`/products/${item.id}`} onClick={closeList} style={{ textDecoration: "none", color: "inherit", display: "block", height: "100%" }}>
       <Card style={{ height: "100%" }}>
         <Card.Img
           variant="top"

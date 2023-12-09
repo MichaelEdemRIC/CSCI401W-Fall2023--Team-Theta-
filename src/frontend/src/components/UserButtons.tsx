@@ -4,14 +4,14 @@ import { Button, Nav } from 'react-bootstrap';
 import { useWishlist } from '../context/WishlistContext';
 
 export function UserButtons() {
-    const { isLoggedIn } = useAuth();
+    const { isLoggedIn, logout } = useAuth();
     const { openList } = useWishlist();
 
     if(isLoggedIn) {
         return (
             <>
                 <Nav.Link to="/login" as={NavLink}>
-                    <Button size="lg" className="rounded-5" variant="warning">
+                    <Button size="lg" className="rounded-5" variant="warning" onClick={logout}>
                         Logout
                     </Button>
                 </Nav.Link>

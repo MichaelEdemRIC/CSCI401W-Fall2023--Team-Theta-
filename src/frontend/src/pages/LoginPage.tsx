@@ -10,6 +10,7 @@ export default function LoginPage() {
     const loginURL = "http://localhost:8000/login/";
     const [username, setUsername] = useState<string>('');
     const [password, setPassword] = useState<string>('');
+    const [errorMessage, setErrorMessage] = useState<string>('');
 
     sessionStorage.removeItem('token');
     sessionStorage.removeItem('user');
@@ -24,14 +25,22 @@ export default function LoginPage() {
         setPassword(e.target.value);
       };
 
+      const loginData = {
+        username,
+        password,
+      };
       const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault(); // Prevent the default form submission\
         
         // Log the data before sending the request
         console.log("Data to be sent:", { username, password });
-
+        console.log(JSON.stringify(loginData))
         try {
-            const response = await axios.post(loginURL, { username, password });
+            const response = await axios.post(loginURL, JSON.stringify(loginData), {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
             console.log("Response:", response.data);
             sessionStorage.setItem('token', response.data.token);
             sessionStorage.setItem('user', username);
@@ -40,7 +49,13 @@ export default function LoginPage() {
             navigate('/');
         } catch (error:any) {
             console.error("Error:", error.message);
-            // Handle errors, such as displaying an error message to the user
+            if (error.response && error.response.status === 404) {
+                // Set the error message for user not found
+                setErrorMessage('Username or password is invalid.');
+            } else {
+                // Handle other errors or display a generic error message
+                setErrorMessage('An unexpected error occurred.');
+            }
         }
     };
     return (
@@ -78,7 +93,7 @@ export default function LoginPage() {
                     </button>
                 </p>
             </form>
-
+            {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
             <footer>
                 <p>First time? <Link to="/register">Create an account</Link>.</p>
                 <p><Link to="/">Back to Homepage</Link>.</p>

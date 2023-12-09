@@ -13,7 +13,7 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('id', 'username', 'password', 'email')
+        fields = ('id', 'username', 'password')
 
 class WishlistSerializer(serializers.ModelSerializer):
     product = ProductSerializer(read_only=True)

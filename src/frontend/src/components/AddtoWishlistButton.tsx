@@ -8,17 +8,22 @@ export function AddtoWishlistButton({ id }: { id: number }) {
   const { isLoggedIn } = useAuth();
   const navigate = useNavigate();
   const username = sessionStorage.getItem("user");
+  const storedToken = sessionStorage.getItem('token');
 
   const wishlistURL = "http://localhost:8000/api/add_wishlist_item/"
 
   const requestData = {
-    user: username,
-    product_id: id,
+    "user": username, "product_id": id,
   };
 
   const AddToWishlist = async () => {
     try {
-      const response = await axios.post(wishlistURL, requestData);
+      const response = await axios.post(wishlistURL, requestData, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `token ${storedToken}`
+        },
+      });
       console.log(response)
       } catch (error: any) {
 

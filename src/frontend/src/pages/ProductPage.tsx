@@ -21,12 +21,11 @@ export function ProductPage() {
         setProduct(response.data);
       } catch (error) {
         console.error(error);
-         // Set an empty array or handle the error state accordingly
       }
     };
 
     fetchData();
-  }, []);
+  }, [id]);
   if(product) {
     return (
       <>

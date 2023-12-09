@@ -5,7 +5,7 @@ import { Product } from "../components/Product";
 import axios from "axios";
 
 export function Home() {
-  const [items, setItems] = useState<Product[] | null>(null);
+  const [items, setItems] = useState<Product[]>([]);
   const itemsEndpoint = "http://localhost:8000/api/get_data/";
   useEffect(() => {
     const fetchData = async () => {

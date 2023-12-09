@@ -52,8 +52,14 @@ export default function AdminAddItem() {
     event.preventDefault(); // Prevent the default form submission\
     await handleImageUpload();
     console.log({product});
+    const storedToken = sessionStorage.getItem("token")
     try {
-      const response = await axios.post(addURL, { product })
+      const response = await axios.post(addURL, { product }, {
+        headers : {
+          'Content-Type': 'application/json',
+          'Authorization': `token ${storedToken}`
+        }
+      })
       console.log("Response:", response.data);
       navigate("/");
     } catch (error: any) {
