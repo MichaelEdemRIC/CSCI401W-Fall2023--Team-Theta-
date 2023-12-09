@@ -11,6 +11,7 @@ from django.shortcuts import get_object_or_404
 from rest_framework.decorators import authentication_classes, permission_classes
 from rest_framework.authentication import SessionAuthentication, TokenAuthentication
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
+import json
 
 from .models import Product 
 from .serializers import *
@@ -108,7 +109,8 @@ def delete_wishlist_id(request, pk):
 def add_wishlist_item(request):
      if request.method == "POST":
         wishlist_data = JSONParser().parse(request)
-        serializer = WishlistSerializer(data=wishlist_data)
+        parsed_wishlist_data = {"user": request.user.username, "product_id": wishlist_data['product_id']}
+        serializer = WishlistSerializer(data=parsed_wishlist_data)
         if serializer.is_valid():
             serializer.save()
             return JsonResponse(serializer.data, status=status.HTTP_201_CREATED)
