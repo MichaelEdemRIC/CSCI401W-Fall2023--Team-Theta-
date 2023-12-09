@@ -1,66 +1,72 @@
-import { json, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Col, Row } from "react-bootstrap";
 import "../LoginApp.css";
-import { useState } from "react";
-import { Product, ProductInput } from "../components/Product";
+import { useState, ChangeEvent, FormEvent } from "react";
+import { ProductInput } from "../components/Product";
+
+interface Product {
+  amzCurrentPrice: string;
+  amzMSRP: string;
+  amzURL: string;
+  img: File | null;
+  lowestPrice: string;
+  name: string;
+  walCurrentPrice: string;
+  walMSRP: string;
+  walURL: string;
+  dateAdded: string;
+  id: number;
+}
 
 export default function AdminAddItem() {
   const addURL = "http://localhost:8000/api/add_item/";
-  const [product, setProduct] = useState<Product>({
+  const [product, setProduct] = useState<ProductInput>({
     amzCurrentPrice: "",
     amzMSRP: "",
     amzURL: "",
-    img: "",
+    img: null,
     lowestPrice: "",
     name: "",
     walCurrentPrice: "",
     walMSRP: "",
     walURL: "",
-    dateAdded: "",
-    id: 11,
   });
 
-  const formdata = {
-    amzCurrentPrice: product.amzCurrentPrice,
-    amzMSRP: product.amzMSRP,
-    amzURL: product.amzURL,
-    img: product.img,
-    lowestPrice: product.lowestPrice,
-    name: product.name,
-    walCurrentPrice: product.walCurrentPrice,
-    walMSRP: product.walMSRP,
-    walURL: product.walURL,
-  }
-  const formdata2 = {
-    "name": product.name,
-    "amzMSRP": product.amzMSRP,
-    "amzCurrentPrice": product.amzCurrentPrice,
-    "walMSRP": product.walMSRP,
-    "walCurrentPrice": product.walCurrentPrice,
-    "lowestPrice": product.lowestPrice,
-    "amzURL": product.amzURL,
-    "walURL": product.walURL,
-    "img": product.img
-  }
-  const jsonString = JSON.stringify(formdata2);
   const navigate = useNavigate();
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault(); // Prevent the default form submission\
-    console.log(formdata2);
-    console.log(jsonString)
-    const storedToken = sessionStorage.getItem("token")
+  const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0] || null;
+    setProduct({ ...product, img: file });
+  };
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const formData = new FormData();
+    formData.append("name", product.name);
+    formData.append("amzMSRP", product.amzMSRP);
+    formData.append("amzCurrentPrice", product.amzCurrentPrice);
+    formData.append("walMSRP", product.walMSRP);
+    formData.append("walCurrentPrice", product.walCurrentPrice);
+    formData.append("lowestPrice", product.lowestPrice);
+    formData.append("amzURL", product.amzURL);
+    formData.append("walURL", product.walURL);
+    formData.append("img", product.img || "");
+
+    const storedToken = sessionStorage.getItem("token");
+
     try {
-      const response = await axios.post(addURL, jsonString, {
-        headers : {
-          'Content-Type': 'application/json',
-          'Authorization': `token ${storedToken}`
-        }
-      })
+      const response = await axios.post(addURL, formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          'Authorization': `Token ${storedToken}`
+        },
+      });
+
       console.log("Response:", response.data);
       navigate("/");
-    } catch (error: any) {
+    } catch (error:any) {
       console.error("Error:", error.message);
     }
   };
@@ -86,11 +92,11 @@ export default function AdminAddItem() {
           <label>Image File Name</label>
           <br />
           <input
-            type="text"
+            type="file"
             name="img"
             accept=".png, .jpeg, .jpg"
             style={{ width: "100%", boxSizing: "border-box" }}
-            onChange={(e) => setProduct({ ...product, img: e.target.value })}
+            onChange={handleImageChange}
             required
           />
         </p>

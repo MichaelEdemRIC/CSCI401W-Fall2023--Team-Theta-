@@ -16,7 +16,7 @@ export type ProductInput = {
   amzCurrentPrice: string;
   amzMSRP: string;
   amzURL: string;
-  img: string;
+  img: File | null;
   lowestPrice: string;
   name: string;
   walCurrentPrice: string;
