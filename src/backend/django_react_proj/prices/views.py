@@ -47,6 +47,20 @@ def get_data_id(request, pk):
             return JsonResponse(serializer.data)
         return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+@api_view(['PUT'])
+def update_item(request, pk):
+    try:
+        product = Product.objects.get(pk=pk)
+    except Product.DoesNotExist:
+        return JsonResponse({'message': 'The product does not exist'}, status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == "PUT":
+        product_data = JSONParser().parse(request)
+        serializer = ProductSerializer(product, data=product_data)
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(serializer.data)
+        return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['POST'])
 @authentication_classes([SessionAuthentication, TokenAuthentication])

@@ -10,6 +10,7 @@ urlpatterns = [
     path('api/get_data/', price_views.get_data),
     path('api/get_data_id/<int:pk>/', price_views.get_data_id),
     path('api/add_item/', price_views.add_item),
+    path('api/update_item/<int:pk>/', price_views.update_item),
     path('api/search_name/', price_views.search_name),
     path('api/search_name/<str:name>/', price_views.search_name),
     path('api/upload_image/', price_views.upload_image),
