@@ -62,7 +62,11 @@ def update_item(request, pk):
 def add_item(request):
      if request.method == "POST":
         product_data = JSONParser().parse(request)
-        print(product_data)
+        if  "http" not in product_data['walURL']:
+            product_data['walURL'] = "http://" + product_data['walURL']
+        if  "http" not in product_data['amzURL']:
+            product_data['amzURL'] = "http://" + product_data['amzURL']
+
         serializer = ProductSerializer(data=product_data)
         if serializer.is_valid():
             serializer.save()
