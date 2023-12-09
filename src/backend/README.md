@@ -77,6 +77,8 @@ curl http://localhost:8000/api/get_data_id/1/
 **/add_item** - POST
 ```
 curl -X POST http://localhost:8000/api/add_item/ -d '{"name": "something", "amzMSRP": 4.50, "amzCurrentPrice": 3.50, "walMSRP": 4.99, "walCurrentPrice": 3.98, "lowestPrice": 3.50, "amzURL": "https://www.amazon.com/something", "walURL": "https://www.walmart.com/something"}' -H "Content-Type: application/json" -H "Authorization: token $token"
+
+curl -X POST http://localhost:8000/api/add_item/ -F "name=Product Name" -F "amzMSRP=10.00" -F "amzCurrentPrice=8.50" -F "walMSRP=12.00" -F "walCurrentPrice=9.50" -F "lowestPrice=8.50" -F "amzURL=http://amazon.com/product" -F "walURL=http://walmart.com/product" -F "img=@./image.jpg" -H "Content-Type: multipart/form-data" -H "Authorization: Token $token" 
 ```
 **/update_item** - PUT
 ```
