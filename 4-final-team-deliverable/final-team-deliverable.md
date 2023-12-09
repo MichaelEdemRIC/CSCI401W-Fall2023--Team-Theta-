@@ -64,13 +64,13 @@
 
 3. **Accomplishments and Pride:** 
 
-**Sean Parks**- Kept the team on track with the tasks that needed to be done each week and developed the base of the frontend, educating other team members on how React worked. 
+- **Sean Parks**- Kept the team on track with the tasks that needed to be done each week and developed the base of the frontend, educating other team members on how React worked. 
 
-**Stanely Aaron**- Developed the base of the backend to manipulate and returns products and wishlist items, educating other team members on how Django worked. 
+- **Stanely Aaron**- Developed the base of the backend to manipulate and returns products and wishlist items, educating other team members on how Django worked. 
 
-**Nick Parks**- managed the database and worked on the user and admin authentication Api endpoints. 
+- **Nick Parks**- managed the database and worked on the user and admin authentication Api endpoints. 
 
-**Michael Edem**- created the login frontend and the git repository, giving his thoughts to keep the scope and goals of the project realistic 
+- **Michael Edem**- created the login frontend and the git repository, giving his thoughts to keep the scope and goals of the project realistic 
 
 4. **Learning and Growth:** 
 
