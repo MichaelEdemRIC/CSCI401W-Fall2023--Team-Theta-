@@ -83,8 +83,8 @@ def upload_image(request):
 
 # admin endpoint
 @api_view(['GET'])
-#@authentication_classes([SessionAuthentication, TokenAuthentication])
-#@permission_classes([IsAuthenticated, IsAdminUser])
+@authentication_classes([SessionAuthentication, TokenAuthentication])
+@permission_classes([IsAuthenticated, IsAdminUser])
 def get_wishlist(request):
     if request.method == 'GET':
         wishlist_items = Wishlist.objects.all()
