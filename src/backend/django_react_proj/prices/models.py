@@ -12,7 +12,7 @@ class Product(models.Model):
     walCurrentPrice = models.DecimalField(max_digits=6, decimal_places=2)
     lowestPrice = models.DecimalField(max_digits=6, decimal_places=2)
     # img = models.CharField("Name", max_length=240)
-    img = models.CharField(max_length=240, null=True, blank=True)
+    img = models.ImageField(upload_to='images/', null=True, blank=True)
     amzURL = models.URLField(max_length=200)
     walURL = models.URLField(max_length=200)
     dateAdded = models.DateField("Date added", auto_now_add=True)
