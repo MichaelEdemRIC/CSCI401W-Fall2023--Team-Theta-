@@ -21,7 +21,8 @@ urlpatterns = [
     re_path('test_admin_token', price_views.test_admin_token),
     re_path('test_user_token', price_views.test_user_token),
     path('api/get_users/', price_views.get_users),
-    path('api/delete_wishlist_id/<int:pk>/', price_views.delete_wishlist_id)
+    path('api/delete_wishlist_id/<int:pk>/', price_views.delete_wishlist_id),
+    path('api/get_user_wishlist/', price_views.get_user_wishlist)
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

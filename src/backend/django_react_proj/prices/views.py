@@ -114,6 +114,16 @@ def add_wishlist_item(request):
             return JsonResponse(serializer.data, status=status.HTTP_201_CREATED)
         return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+# user endpoint
+@api_view(['GET'])
+@authentication_classes([SessionAuthentication, TokenAuthentication])
+@permission_classes([IsAuthenticated])
+def get_user_wishlist(request):
+    if request.method == 'GET':
+        wishlist_items = Wishlist.objects.filter(user=request.user.username)
+        serializer = WishlistSerializer(wishlist_items, many=True)
+        return JsonResponse(serializer.data, safe=False)
+
 @api_view(['POST'])
 def signup(request):
     serializer = UserSerializer(data=request.data)
