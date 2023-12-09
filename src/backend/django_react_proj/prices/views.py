@@ -97,7 +97,7 @@ def get_wishlist(request):
 def delete_wishlist_id(request, pk):
 
     if request.method == "DELETE":
-        Product.objects.filter(id=pk).delete()
+        Wishlist.objects.filter(id=pk).delete()
 
         return JsonResponse("deleted", safe=False)
 
