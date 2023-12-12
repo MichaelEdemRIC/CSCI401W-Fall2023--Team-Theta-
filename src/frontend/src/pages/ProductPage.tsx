@@ -11,7 +11,7 @@ export function ProductPage() {
   let { id } = useParams();
   const [product, setProduct] = useState<Product | null>(null);
   const itemsEndpoint = "http://localhost:8000/api/get_data_id/";
-  const baseURL = "http://localhost:8000/";
+  const baseURL = "http://localhost:8000";
 
   useEffect(() => {
     const fetchData = async () => {
