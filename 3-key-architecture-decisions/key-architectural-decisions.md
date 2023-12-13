@@ -92,7 +92,7 @@ This assignment is designed to guide you in understanding the foundational aspec
 - Based on our current understanding, abstraction between the frontend and backend allows for changes in technologies in one area that does not affect the other.
 - React is not strict with a lot of the libraries that can be used, so those technologies can be changed if new, easier resources are found.
 
-  ### 4.4. Contstraints
+### 4.4. Contstraints
 
 - We are unable to use the Amazon and Walmart APIs, so we will need to design our backend so that dummy data can be manually entered via the frontend.
 - Due to time constraints, security is less of a focus for things like authentication. Django has a built in authentication system with some security measures that we will need to rely on.
