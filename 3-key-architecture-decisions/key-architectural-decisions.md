@@ -14,6 +14,7 @@
   - [4.1. Team Skills and Learning](#41-team-skills-and-learning)
   - [4.2. Community and Support](#42-community-and-support)
   - [4.3. Future Adaptability](#43-future-adaptability)
+  - [4.4. Constraints](#44-constraints)
 - [5. Decision Log](#5-decision-log)
 
 ## Directions:
@@ -63,15 +64,15 @@ This assignment is designed to guide you in understanding the foundational aspec
 
 **Why:** The team is most familiar with Python so the learning curve will be easier. It is also a popular skill to include on a resume and well-docmented. 
 
-**Considerations:**
+**Considerations:** We need something that is easy for multiple people to learn.
 
 ### 3.3. Database System
 
-**Choice:** mySQL 
+**Choice:** sqllite
 
-**Why:** mySQL is a common industry standard that is free to use. 
+**Why:** sqllite is easy to use with Django and doesn't require a server to use. Everything is stored in a file on our Django backend.
 
-**Considerations:**
+**Considerations:** We would have to pay for a server to keep other databases running.
 
 ---
 
@@ -91,11 +92,15 @@ This assignment is designed to guide you in understanding the foundational aspec
 - Based on our current understanding, abstraction between the frontend and backend allows for changes in technologies in one area that does not affect the other.
 - React is not strict with a lot of the libraries that can be used, so those technologies can be changed if new, easier resources are found.
 
+  ### 4.4. Contstraints
+
+- We are unable to use the Amazon and Walmart APIs, so we will need to design our backend so that dummy data can be manually entered via the frontend.
+- Due to time constraints, security is less of a focus for things like authentication. Django has a built in authentication system with some security measures that we will need to rely on.
+
 ---
 
 ## 5. Decision Log
 
-Here, you'll log key decisions made and the rationale behind them. Here's an example:
 
 | Date       | Decision                                 | Reasoning                                                                                                           |
 |------------|------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
@@ -103,5 +108,5 @@ Here, you'll log key decisions made and the rationale behind them. Here's an exa
 | 2023-10-07 | Chose Django as our backend framework.   | Our backend team was most familar with Python, which made learning Django a logical choice for a backend framework. |
 | 2023-10-07 | Chose mySQL as our database.   | While doing research, mySQL was the most popular option with a free community edition that is well-supported, which is why our database team wanted to learn it the most. |
 | 2023-10-14 | Incorporated Bootstrap into our frontend.   | Bootstrap makes it easier to create and style components, with many sample components for basic features like buttons, lists, cards, and navigation bars. |
+| 2023-10-30 | Changed our database to sqllite.   | Sqllite was included as a file in django, so it was easier to use and didn't require a server to run. |
 
-Note: As you progress, keep adding to this log. It will not only help you track your decisions but also offer insights into your evolving
