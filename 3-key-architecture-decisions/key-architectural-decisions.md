@@ -14,7 +14,7 @@
   - [4.1. Team Skills and Learning](#41-team-skills-and-learning)
   - [4.2. Community and Support](#42-community-and-support)
   - [4.3. Future Adaptability](#43-future-adaptability)
-  - [4.4. Constraints](#44-constraints)
+  - [4.4. Constraints](#4-other-considerations)
 - [5. Decision Log](#5-decision-log)
 
 ## Directions:
