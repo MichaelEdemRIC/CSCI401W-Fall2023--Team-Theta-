@@ -161,7 +161,7 @@ This explains a user passing a username and password, the authentication system 
 
 ## Final Reflection Presentation 
 
-- **[Presentation Video](https://emailric-my.sharepoint.com/:v:/r/personal/sparks_1017_email_ric_edu/Documents/2023%20-%202024/Fall%202023/CSCI%20401%20-%20Software%20Engineering/TeamThetaPresentation.mov?csf=1&web=1&e=zXDlb6&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)** 
+- **[Presentation Video](https://emailric-my.sharepoint.com/:v:/g/personal/sparks_1017_email_ric_edu/EenUEfO4VzpFrKB_WkTFr3EBktTxiNy8S96mIWCiE2oeBA?e=zDoIIv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)** 
 
 ## Career Readiness Assessment 
 
